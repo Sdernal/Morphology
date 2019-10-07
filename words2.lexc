@@ -1,0 +1,17 @@
+!!!words2.lexc!!!
+
+Multichar_Symbols +N +Pl
+
+Lexicon Root
+
+cat Ninf;
+torch Ninf;
+ally Ninf;
+play Ninf;
+goose Ninf;
+formula Ninf;
+formula+N+Pl:formulae #;
+
+Lexicon Ninf
+
++N+Pl:^s #;
