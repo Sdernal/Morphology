@@ -1,0 +1,3 @@
+def words c a t | d o g ;
+regex words ["[Sg]":0 | "[Pl]":s] ;
+

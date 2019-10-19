@@ -1,0 +1,16 @@
+define vowel a | e | i | o | u | y ;
+define consonant b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | x | z | w ;
+
+define EInsertion [..] -> e || s | z | x | c h | s h _ "^" s ;
+define CYReplacement y -> i e || consonant _ "^" s ;
+define Cleanup "^" -> 0 ;
+
+define Exceptions [{goose} "+N" "+Pl" .x. {geese}] ;
+read lexc words2.lexc 
+define Lexicon ;
+
+regex Exceptions .P. 
+      Lexicon .o.
+      EInsertion .o.
+      CYReplacement .o.
+      Cleanup ;

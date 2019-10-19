@@ -1,0 +1,11 @@
+Multichar_Symbols [Sg] [Pl]
+
+Lexicon Root
+
+cat Ninf;
+bus Ninf;
+
+Lexicon Ninf
+
+%[Sg%]:0 #;
+%[Pl%]:%+s #;

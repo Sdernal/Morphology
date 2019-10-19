@@ -1,0 +1,5 @@
+read lexc words1.lexc
+def Lexicon ;
+def EInsert %+ -> e || s _ s ;
+def Cleanup %+ -> 0 ;
+regex Lexicon .o. EInsert .o. Cleanup ;
