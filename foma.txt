@@ -1,0 +1,2 @@
+1st and 2nd task (regex in foma):
+regex "[Sg]" -> 0 .o. "[Pl]" -> "+" s .o. y "+" -> i e .o. "+" -> e || [s|z|x|ch|sh]_ .o. "+" -> 0;
