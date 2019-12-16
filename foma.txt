@@ -1,2 +1,3 @@
 1st and 2nd task (regex in foma):
-regex "[Sg]" -> 0 .o. "[Pl]" -> "+" s .o. y "+" -> i e .o. "+" -> e || [s|z|x|ch|sh]_ .o. "+" -> 0;
+define exc t o o t h "[Pl]" -> t e e t h .o. f o o t "[Pl]" -> f e e t .o. g o o s e "[Pl]" -> g e e s e;
+regex exc .o. "[Sg]" -> 0 .o. "[Pl]" -> "+" s .o. y "+" -> i e .o. "+" -> e || [s|z|x|ch|sh]_ .o. "+" -> 0;
