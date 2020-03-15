@@ -1,0 +1,20 @@
+Multichar_Symbols +N +Sg +Pl
+
+LEXICON Root
+
+Noun ;
+
+LEXICON Noun
+
+cat Ninf;
+bus Ninf;
+torch Ninf;
+ally Ninf;
+play Ninf
+goose Ninf;
+formula Ninf;
+
+LEXICON Ninf
+
++N+Sg:0 #;
++N+Pl:^s #;

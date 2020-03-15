@@ -1,0 +1,13 @@
+read lexc second_task.lexc
+define Lexicon;
+
+#https://www.study.ru/handbook/mnozhestvennye-chisla-sushchestvitelnyh
+define AddE [..] -> e || s | c h | s h | x _ "^" s;
+
+define ReplaceY y -> i e || _ "^" s;
+
+define Cleanup "^" -> 0;
+
+define Grammar Lexicon .o. AddE .o. ReplaceY .o. Cleanup;
+
+regex [[{play} "+N" "+Pl" .x. {plays}] | [{goose} "+N" "+Pl" .x. {geese}]] .P. Grammar;
