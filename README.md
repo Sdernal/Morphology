@@ -13,17 +13,17 @@
 
 ## Структура курса
 <!-- TOC -->
-- Введение
-    - [Основные понятия](./basics/Basics.md)
-    - Морфологические парсеры
-- [Part-of-speech tagging](http://nlpprogress.com/english/part-of-speech_tagging.html)
+- [Основные понятия](#Основные-понятия)
+- [Морфологический анализ](#Морфологический-анализ)
 - Исправление ошибок
-    - Исправление опечаток
-    - [Grammatical error correction](http://nlpprogress.com/english/grammatical_error_correction.html)
 - Морфологический синтез
-    - [Lexical normalization](http://nlpprogress.com/english/lexical_normalization.html)
 <!-- /TOC -->
 
+Будут рассмотрены state-of-the-art решения для следующих задач:
+- [Part-of-speech tagging](http://nlpprogress.com/english/part-of-speech_tagging.html)
+- [Grammatical error correction](http://nlpprogress.com/english/grammatical_error_correction.html)
+- [Lexical normalization](http://nlpprogress.com/english/lexical_normalization.html)
+- 
 <div style="page-break-after: always;"></div> 
 
 ## Основные понятия
@@ -238,8 +238,40 @@
 
 <div style="page-break-after: always;"></div> 
 
+## Дополнительно
+
+#### Аблаут (чередование гласных)
+"Внутрення флексия": соб<span style="color:red">-</span>рать - соб<span style="color:red">е</span>ру - собир<span style="color:red">а</span>ю
+
+#### Морфема внутри корня, разрывная мофрология
+Арабский язык: 
+- **k t b** "писать" (корень) 
+  - +**-a-a-** Прош.Вр., Акт.залог (огласовки) 
+  - +**-a** 3л, Ед.ч, МР (суффикс (окончание)) 
+  - =**kataba** "написал"
+- **k tt b** Интенсив ~«много писать» (корень) 
+  - +**-u-i-**	Прош.Вр., Пассив.залог (огласовки) 
+  - +**tu-____-u** 3л, Ед.ч, ЖР., Имперф, пассив (префикс, суффикс) 
+  - =**tukuttibu**	 "(её) много писали"
+
+<div style="page-break-after: always;"></div> 
+
 ## Задачи компьютерной морфологии
 - **Спеллинг** - проверка слова по словарю
 - **Морфологический анализ** - определение грамматического значения и леммы у словоформы
 - **Морфологический синтез** - построение словоформы по лемме и грамматическому значению
 - **Исправление опечаток** - поиск наиболее близкого слова в слоаваре
+
+Далее подробно о каждой задаче и способах её решения.
+
+<div style="page-break-after: always;"></div>
+
+## Морфологический анализ
+Морфологический анализ в лингвистике — определение морфологических характеристик слова.
+
+#### Задача морфологического анализа
+- Получение леммы
+- Получение грамматического значения
+
+Существуют уже готовые морфологические анализаторы, которые справляются с этой задачей. 
+Например, **MyStem** и **pymorphy**. Чтобы поближе с ними познакомиться, предлагается изучить [morph_analyzers.ipynb](./morph_analyzers.ipynb)
