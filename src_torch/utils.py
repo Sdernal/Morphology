@@ -1,7 +1,7 @@
 import torch
 from tqdm import tqdm
 
-from src.vocab import Vocab
+from src_torch.vocab import Vocab
 
 
 def load_embeddings(tokens_vocab: Vocab, embeddings_file: str):

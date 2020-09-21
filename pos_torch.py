@@ -1,7 +1,7 @@
 import torch
 from torch.utils.data import RandomSampler, DataLoader, SequentialSampler
 
-from src import RuPosReader, RuPosIndexer, RuPosDataset, load_embeddings, SimpleTagger, Trainer
+from src_torch import RuPosReader, RuPosIndexer, RuPosDataset, load_embeddings, SimpleTagger, Trainer
 
 if __name__ == '__main__':
     device = torch.device('cuda')

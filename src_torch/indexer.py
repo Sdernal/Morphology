@@ -1,7 +1,7 @@
 from typing import List, Tuple
 
-from src.reader import Sentence
-from src.vocab import Vocab
+from src_torch.reader import Sentence
+from src_torch.vocab import Vocab
 
 
 class RuPosIndexer:

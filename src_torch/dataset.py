@@ -4,8 +4,8 @@ import torch
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import Dataset
 
-from src.indexer import RuPosIndexer
-from src.reader import Sentence
+from src_torch.indexer import RuPosIndexer
+from src_torch.reader import Sentence
 
 
 class RuPosDataset(Dataset):
