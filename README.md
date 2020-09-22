@@ -343,8 +343,8 @@ allennlp train pos_config.json -s <путь до папки с результатом> --include-packag
 
 Ёнкодер здесь представл€ет собой BiLSTM-CRF.
 
-<img src="pics/flair.PNG" width="350" align="middle">
+<img src="pics/flair.PNG" width="350">
 
-<img src="pics/charlm.PNG" width="450" align="middle">
+<img src="pics/charlm.PNG" width="450">
 
 *Akbik A., Blythe D., Vollgraf R. Contextual string embeddings for sequence labeling //Proceedings of the 27th International Conference on Computational Linguistics. Ц 2018. Ц —. 1638-1649.*
