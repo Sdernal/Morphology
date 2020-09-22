@@ -320,12 +320,18 @@
 
 <details><summary><b>Бонус</b></summary>
 <p>
-Вы думали это все? Нет, на allennlp можнописать в JSON. Пример:
+Вы думали это все? Нет, на allennlp можно писать в JSON. Запуск примера:
 
 ```
 allennlp train pos_config.json -s <путь до папки с результатом> --include-package src_allennlp
  ``` 
 </p>
 </details>
+
+<div style="page-break-after: always;"></div>
+
+## AllenNLP master race
+
+<img src="pics/allennlp.jpg" align="middle">
 
 <div style="page-break-after: always;"></div>
