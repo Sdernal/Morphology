@@ -318,7 +318,7 @@
 
 Ну а теперь давайте посмотрим, насколько AllenNLP прекрасен: [pos_allennlp.ipynb](pos_allennlp.ipynb)
 
-
+<div style="page-break-after: always;"></div>
 
 ## AllenNLP JSON
 
@@ -334,4 +334,17 @@ allennlp train pos_config.json -s <путь до папки с результатом> --include-packag
 
 <div style="page-break-after: always;"></div>
 
+## Flair embeddings
 
+Теперь разберем один из SOTA примеров: **Flair embeddings**. Данный подход позволяет генерировать контекстуальные "строковые" эмбеддинги. 
+
+Суть довольно проста: мы представляем текст как последовательность символов и эмбеддер (BiRNN) возвращает векторные представления для них.
+Эмбеддинги для каждого слов берутся как конкатенация эмбеддингов последнего символа слова при прямом проходе и первого - при обратном.
+
+Энкодер здесь представляет собой BiLSTM-CRF.
+
+<img src="pics/flair.PNG" width="350" align="middle">
+
+<img src="pics/charlm.PNG" width="450" align="middle">
+
+*Akbik A., Blythe D., Vollgraf R. Contextual string embeddings for sequence labeling //Proceedings of the 27th International Conference on Computational Linguistics. – 2018. – С. 1638-1649.*
