@@ -21,10 +21,10 @@ class SimpleTagger(Model):
 
         assert self.embedder.get_output_dim() == self.encoder.get_input_dim()
 
-        self.feedforward = FeedForward(encoder.get_output_dim(), 1, hidden_dims=100,
+        self.feedforward = FeedForward(encoder.get_output_dim(), 1, hidden_dims=ff_dim,
                                        activations=Activation.by_name('relu')(), dropout=dropout )
         self.out = torch.nn.Linear(in_features=self.feedforward.get_output_dim(),
-                                          out_features=vocab.get_vocab_size('labels'))
+                                   out_features=vocab.get_vocab_size('labels'))
 
         self.f1 = FBetaMeasure(average='micro')
         self.accuracy = CategoricalAccuracy()
