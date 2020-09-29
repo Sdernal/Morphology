@@ -480,7 +480,14 @@ Donaudampfschiffahrtselektrizit?tenhauptbetriebswerkbauunterbeamtengesellschaft
 
 **Output:** *She saw Tom caught by a policeman in the park last night.*
 
-Датасеты обычно включают в себя предложения или параграфы, а также указания ошибок со спанами в тексте, типом ошибки и как нужно исправить.
+Датасеты обычно включают в себя предложения или параграфы, а также указания ошибок со спанами в тексте, типом ошибки и как нужно исправить:
+
+*...I have just <span style="color:red">recieved</span> the letter, which lets me know that I have won the first prize. I am proud of winning it and would like to say how <span style="color:red">thankful</span> I am... \
+"edits": [71, 79, "received", "S"], [195, 203, "grateful", "RJ"]\
+S – spelling error\
+R - word or phrase needs Replacing\
+J - AdJective*
+
 
 <div style="page-break-after: always;"></div>
 
