@@ -629,3 +629,117 @@ graph LR
 
 ## Использование конечного преобразователя
 Теперь построим конечный преобразователь для приведения сущесвительных ко множественному числу на английском. 
+- Входной алфавит $\Sigma=\{a-z, +N, +Sg, +Pl\}$
+- Выходной алфавит $\Gamma=\{a-z\}$
+
+Итоговый преобразователь будет состоять из нескольких:
+- $T_s$ - вставляем "s" и специальную метку "@" перед "s": 
+  - +N+Sg -> @ || _#; (# - конец строки) 
+  - +N+Pl -> @s || _# 
+- $T_y$ - меняем "y" на "ie" после согласных для множественного числа:
+  - y -> ie || C_@s#; (C-согласный)
+- $T_{sib}$ - вставляем дополнительную "e" после шипящих:
+  - $\epsilon$ -> e || [s,z,x,ch,sh]_@s# 
+- $T_{cl}$ - очистка от служебных символов
+  - @ -> $\epsilon$ || _
+- $T_{exc}$ - для исключений
+
+<div style="page-break-after: always;"></div>
+
+Фрагмент $T_{exc}$ (некоторые состояния были сплющены для простоты, $\epsilon$ здесь - "_")
+
+```mermaid
+graph LR
+    A((q0))--formula-->B((q1))
+    A--m-->C((q2)) 
+    C--"ouse"-->D((q3))
+    D--"+N+Sg:_"-->E((q4)):::red
+    C--"ou:i"-->F((q5))
+    F--"s:c"-->G((q6))
+    G--e-->H((q7))
+    H--"+N+Pl:_"-->I((q8)):::red
+    B--"+N:_"-->J((q9))
+    J--"+Sg:_"-->L((q10)):::red
+    J--"+Pl:e"-->M((q11)):::red
+    J--"+Pl:s"-->N((q12)):::red
+    classDef red fill:#f00;
+```
+
+Итоговый преобразователь $T=T_{exc} \cup_p (T_s \circ T_y \circ T_{sib} \circ T_{cl})$
+
+<div style="page-break-after: always;"></div>
+
+## Арабская морфология
+Теперь немного рассмотрим пример словоизменения из арабского языка, для которого характерна разрывная мофрология. Тут основу представляет собой набор согласных, между которыми вставляюся гласные для изменения формы. Например:
+- k t b - "писать"
+- +-a-a- Прош.Вр., Акт.залог (огласовки)
+- +-a 3л, Ед.ч, МР (суффикс (окончание))
+- = kataba "(он) писал"
+
+Аналогично предыдущей задаче зададим вход:
+- вход: основа +Type +Voice +Aspect +Person +Gender
+- Type $\in$ { I, II } - порода (базовая или интенсив)   
+- Voice $\in$ {Act, Pass} - залог
+- Aspect $\in$ {Perf, Imperf} - вид
+- Person $\in$ {3} - лицо
+- Gender $\in$ {M, F} - род
+
+Примеры:
+- ktb+I+Act+Perf+3+M -> kataba
+- ktb+II+Pass+Imperf+3+F -> tukattabu
+- zhr+I+Act+Imperf+3+M -> yazharu
+- sfr+I+Act+Imperf+3+F -> tasfiru
+- mrd+II+Pass+Perf+3+M -> murrida
+- hsn+I+Act+Perf+3+F -> hasunat
+
+<div style="page-break-after: always;"></div>
+
+## Модель словообразования
+Приведем небольшую часть таблиц морфем для понимания построения примеров:
+- Порода: в интенсиве только вторая согласная дублируется.
+- Род и лицо:
+  
+|Форма|Окончание перфекта|Префикс и окончание имперфекта|
+|:---:|:--:|:---:|
+|3M|-a|ya- -u|
+|3F|-at|ta- -u|
+- Парадигмы
+
+|Класс|Огласовка перфекта|Огласовка имперфекта|Пример|
+|:---:|:--:|:---:|:---:|
+|1|a-a|$\varnothing$-a|zahara – «сиять»|
+|2|a-a|$\varnothing$-u|kataba – «писать»|
+|3|a-a|$\varnothing$-i|safara - «отправляться в путь»|
+|4|a-i|$\varnothing$-a|marida – «быть больным»|
+|5|a-u|$\varnothing$-u|hasuna – «быть красивым»|
+
+<div style="page-break-after: always;"></div>
+
+## Преобразователь для арабской морфологии
+
+- **Input** - проверка корректности и вставка метки класса
+- **PosInsertion** - вставка маркеров позиций
+- **Fill** - заполнение огласовок (порода, вид, залог, класс),
+- **Prefix** - вставка префиксов (вид, залог, лицо, род)
+- **Suffix** - вставка суффиксов (вид, лицо, род)
+- **Cleanup** - очистка меток
+- **Общий преобразователь**: Input ? PosInsertion ? Fill ? Prefix ? Suffix ? Cleanup
+  
+Пример: sfr+I+Act+Imperf+3+F
+- **Input**: C3^sfr+I+Act+Imperf+3+F 
+- **PosInsertion**:  C3^0s1f2r3+I+Act+Imperf+3+F
+- **Fill**: C3^0sfir3+I+Act+Imperf+3+F
+- **Prefix**: C3^tasfir3+I+Act+Imperf+3+F
+- **Suffix**: C3^tasfiru+I+Act+Imperf+3+F
+- **Cleanup**: tasfiru
+
+<div style="page-break-after: always;"></div>
+
+## Компиляторы для конечных преобразователей
+- XFST (Xerox Finite-state toolkit)
+- HFST (Helsinki Finite-state toolkit)
+- FOMA
+- SFST (Stuttgart finite-state toolkit)
+- OpenFST
+
+Более подробно предлагается ознакомиться с FOMA и выполнить пару заданий из [foma.md](foma.md)
