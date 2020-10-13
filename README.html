@@ -371,7 +371,7 @@ pre
 html, body {
 	font-family: var(--markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif);
 	font-size: var(--markdown-font-size, 20px);
-	padding: 0 14px;
+	padding: 0 26px;
 	line-height: var(--markdown-line-height, 22px);
 	word-wrap: break-word;
 }
@@ -516,9 +516,9 @@ h1 {
 }
 
 h2 {
-	padding-bottom: 0.3em;
     padding-top: 0.3em;
-	line-height: 1.2;
+	padding-bottom: 0.3em;
+	line-height: 0.5;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	font-weight: normal;
@@ -816,11 +816,11 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 
     </head>
     <body class="vscode-body vscode-light">
-        <h1 id="prodvinutye-zadachi-i-modeli-nlp.-morfologiya-2" id="d0bfd180d0bed0b4d0b2d0b8d0bdd183d182d18bd0b5-d0b7d0b0d0b4d0b0d187d0b8-d0b8-d0bcd0bed0b4d0b5d0bbd0b8-nlp-d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d18f-2" data-line="0" class="code-line">Продвинутые задачи и модели NLP. Морфология</h1>
+        <h1 id="prodvinutye-zadachi-i-modeli-nlp.-morfologiya-2" id="d0bfd180d0bed0b4d0b2d0b8d0bdd183d182d18bd0b5-d0b7d0b0d0b4d0b0d187d0b8-d0b8-d0bcd0bed0b4d0b5d0bbd0b8-nlp-d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d18f-3" data-line="0" class="code-line">Продвинутые задачи и модели NLP. Морфология</h1>
 <p data-line="1" class="code-line">Данный курс посвящен основным задачам морфологии и способам их решения.
 Старые <a href="https://drive.google.com/drive/u/0/folders/0B07mCd0ZUKkjb1lCMmxrQXlYNGc" data-href="https://drive.google.com/drive/u/0/folders/0B07mCd0ZUKkjb1lCMmxrQXlYNGc">презентации</a> Ильи Гусева.
 Предполагается, что студенты уже знакомы с <strong>pytorch</strong> и умеют писать нейроные сети.</p>
-<h2 id="struktura-kursa-2" id="d181d182d180d183d0bad182d183d180d0b0-d0bad183d180d181d0b0-2" data-line="5" class="code-line">Структура курса</h2>
+<h2 id="struktura-kursa-2" id="d181d182d180d183d0bad182d183d180d0b0-d0bad183d180d181d0b0-3" data-line="5" class="code-line">Структура курса</h2>
 <!-- TOC -->
 <ul>
 <li data-line="7" class="code-line"><a href="#Основные-понятия" data-href="#Основные-понятия">Основные понятия</a></li>
@@ -833,13 +833,13 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <ul>
 <li data-line="14" class="code-line"><a href="http://nlpprogress.com/english/part-of-speech_tagging.html" data-href="http://nlpprogress.com/english/part-of-speech_tagging.html">Part-of-speech tagging</a></li>
 <li data-line="15" class="code-line"><a href="http://nlpprogress.com/english/grammatical_error_correction.html" data-href="http://nlpprogress.com/english/grammatical_error_correction.html">Grammatical error correction</a></li>
-<li data-line="16" class="code-line"><a href="http://nlpprogress.com/english/lexical_normalization.html" data-href="http://nlpprogress.com/english/lexical_normalization.html">Lexical normalization</a></li>
+<li data-line="16" class="code-line"><a href="#Лемматизация" data-href="#Лемматизация">Lemmatization</a></li>
 </ul>
 <div style="page-break-after: always;"></div> 
-<h2 id="osnovnye-ponyatiya-2" id="d0bed181d0bdd0bed0b2d0bdd18bd0b5-d0bfd0bed0bdd18fd182d0b8d18f-2" data-line="20" class="code-line">Основные понятия</h2>
+<h2 id="osnovnye-ponyatiya-2" id="d0bed181d0bdd0bed0b2d0bdd18bd0b5-d0bfd0bed0bdd18fd182d0b8d18f-3" data-line="20" class="code-line">Основные понятия</h2>
 <p data-line="21" class="code-line"><strong>Морфология</strong> - раздел грамматики, основными объектами которого являются  <strong>слова</strong> естественных языков, их значимые части и морфологические признаки.</p>
 <img src="pics/pyramid.PNG" height="300" style="float:right">
-<h4 id="morfologiya-izuchaet-2" id="d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d18f-d0b8d0b7d183d187d0b0d0b5d182-2" data-line="25" class="code-line">Морфология изучает:</h4>
+<h4 id="morfologiya-izuchaet-2" id="d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d18f-d0b8d0b7d183d187d0b0d0b5d182-3" data-line="25" class="code-line">Морфология изучает:</h4>
 <ul>
 <li data-line="26" class="code-line">Словоизменение</li>
 <li data-line="27" class="code-line">Словообразование</li>
@@ -847,13 +847,13 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <li data-line="29" class="code-line">Грамматические значения</li>
 </ul>
 <div style="page-break-after: always;"></div> 
-<h2 id="grammaticheskoe-znachenie-2" id="d0b3d180d0b0d0bcd0bcd0b0d182d0b8d187d0b5d181d0bad0bed0b5-d0b7d0bdd0b0d187d0b5d0bdd0b8d0b5-2" data-line="33" class="code-line">Грамматическое значение</h2>
+<h2 id="grammaticheskoe-znachenie-2" id="d0b3d180d0b0d0bcd0bcd0b0d182d0b8d187d0b5d181d0bad0bed0b5-d0b7d0bdd0b0d187d0b5d0bdd0b8d0b5-3" data-line="33" class="code-line">Грамматическое значение</h2>
 <p data-line="35" class="code-line">Значение, выражаемое словоизменительной <strong>морфемой</strong></p>
 <p data-line="37" class="code-line"><strong>Морфема</strong> - наименьшая единица языка, имеющая некоторый смысл.</p>
 <p data-line="39" class="code-line">Морфемы подразделяются на два основных типа - <strong>корневые</strong> и <strong>аффиксальные</strong></p>
 <p data-line="41" class="code-line"><strong>Корень</strong> - основная значимая часть слова.</p>
 <p data-line="43" class="code-line"><strong>Аффикс</strong> - вспомогательная часть слова, присоединяемая к корню и служащая для словообразования и выражения грамматических значений.</p>
-<h4 id="tipy-affiksov-2" id="d182d0b8d0bfd18b-d0b0d184d184d0b8d0bad181d0bed0b2-2" data-line="45" class="code-line">Типы аффиксов</h4>
+<h4 id="tipy-affiksov-2" id="d182d0b8d0bfd18b-d0b0d184d184d0b8d0bad181d0bed0b2-3" data-line="45" class="code-line">Типы аффиксов</h4>
 <ul>
 <li data-line="46" class="code-line"><strong>Префиксы</strong> (приставки в русском),
 <strong>постфиксы</strong> (суффиксы и окончания в русском),
@@ -865,11 +865,11 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 и указывая на связь с другими членами предложения (в флектиыных языках, в т.ч. русском такие морфемы называют флексиями).</li>
 </ul>
 <div style="page-break-after: always;"></div> 
-<h2 id="grammemy-i-grammaticheskie-kategorii-2" id="d0b3d180d0b0d0bcd0bcd0b5d0bcd18b-d0b8-d0b3d180d0b0d0bcd0bcd0b0d182d0b8d187d0b5d181d0bad0b8d0b5-d0bad0b0d182d0b5d0b3d0bed180d0b8d0b8-2" data-line="57" class="code-line">Граммемы и грамматические категории</h2>
+<h2 id="grammemy-i-grammaticheskie-kategorii-2" id="d0b3d180d0b0d0bcd0bcd0b5d0bcd18b-d0b8-d0b3d180d0b0d0bcd0bcd0b0d182d0b8d187d0b5d181d0bad0b8d0b5-d0bad0b0d182d0b5d0b3d0bed180d0b8d0b8-3" data-line="57" class="code-line">Граммемы и грамматические категории</h2>
 <p data-line="58" class="code-line"><strong>Грамматическая категория</strong> -  замкнутая система взаимоисключающих и противопоставленных друг другу грамматических значений (граммем),
 задающая разбиение обширной совокупности словоформ (или небольшого набора высокочастотных словоформ с абстрактным типом значения) на непересекающиеся классы,
 различие между которыми существенно сказывается на степени грамматической правильности текста.</p>
-<h4 id="primery-grammaticheskih-kategoriy-2" id="d0bfd180d0b8d0bcd0b5d180d18b-d0b3d180d0b0d0bcd0bcd0b0d182d0b8d187d0b5d181d0bad0b8d185-d0bad0b0d182d0b5d0b3d0bed180d0b8d0b9-2" data-line="62" class="code-line">Примеры грамматических категорий</h4>
+<h4 id="primery-grammaticheskih-kategoriy-2" id="d0bfd180d0b8d0bcd0b5d180d18b-d0b3d180d0b0d0bcd0bcd0b0d182d0b8d187d0b5d181d0bad0b8d185-d0bad0b0d182d0b5d0b3d0bed180d0b8d0b9-3" data-line="62" class="code-line">Примеры грамматических категорий</h4>
 <ul>
 <li data-line="63" class="code-line"><strong>Именные</strong>: падеж, род, определенность, одушевленность, личность</li>
 <li data-line="64" class="code-line"><strong>Глагольные</strong>: время, вид, лицо, наклонение, залог</li>
@@ -877,7 +877,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 </ul>
 <p data-line="67" class="code-line"><strong>Граммема</strong> -  грамматическое значение, понимаемое как один из элементов грамматической категории;
 различные граммемы одной категории исключают друг друга и не могут быть выражены вместе.</p>
-<h4 id="primery-grammem-2" id="d0bfd180d0b8d0bcd0b5d180d18b-d0b3d180d0b0d0bcd0bcd0b5d0bc-2" data-line="70" class="code-line">Примеры граммем:</h4>
+<h4 id="primery-grammem-2" id="d0bfd180d0b8d0bcd0b5d180d18b-d0b3d180d0b0d0bcd0bcd0b5d0bc-3" data-line="70" class="code-line">Примеры граммем:</h4>
 <ul>
 <li data-line="71" class="code-line">Единственное и множественное число</li>
 <li data-line="72" class="code-line">Мужской, женский и средний род</li>
@@ -886,7 +886,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <p data-line="75" class="code-line">Следовательно <strong>грамматическое значение</strong> - набор граммем всех категорий, характерных для данной части речи.
 Например, для “ежа”: существительное, одушевлённое, мужской род, единственное число, родительный падеж.</p>
 <div style="page-break-after: always;"></div>
-<h2 id="grammaticheskoe-i-leksicheskoe-znachenie-2" id="d0b3d180d0b0d0bcd0bcd0b0d182d0b8d187d0b5d181d0bad0bed0b5-d0b8-d0bbd0b5d0bad181d0b8d187d0b5d181d0bad0bed0b5-d0b7d0bdd0b0d187d0b5d0bdd0b8d0b5-2" data-line="80" class="code-line">Грамматическое и лексическое значение</h2>
+<h2 id="grammaticheskoe-i-leksicheskoe-znachenie-2" id="d0b3d180d0b0d0bcd0bcd0b0d182d0b8d187d0b5d181d0bad0bed0b5-d0b8-d0bbd0b5d0bad181d0b8d187d0b5d181d0bad0bed0b5-d0b7d0bdd0b0d187d0b5d0bdd0b8d0b5-3" data-line="80" class="code-line">Грамматическое и лексическое значение</h2>
 <ul>
 <li data-line="81" class="code-line">Грамматические значения образуют замкнутый более структурируемый класс.</li>
 <li data-line="82" class="code-line">Грамматические значения выражаются в принудительном порядке. (У существительно всегда есть категории числа, рода, падежа)</li>
@@ -894,20 +894,20 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 (Грамматические значения выражаются с помощью реляционных морфем)</li>
 <li data-line="85" class="code-line">Грамматические значения могут не иметь полного соответствия во внеязыковой сфере. (род существительных <em>табуретка</em> и  <em>стул</em> мотивированы их окончаниями)</li>
 </ul>
-<h3 id="harakternye-razmery-grammaticheskih-sistem-2" id="d185d0b0d180d0b0d0bad182d0b5d180d0bdd18bd0b5-d180d0b0d0b7d0bcd0b5d180d18b-d0b3d180d0b0d0bcd0bcd0b0d182d0b8d187d0b5d181d0bad0b8d185-d181d0b8d181d182d0b5d0bc-2" data-line="87" class="code-line">Характерные размеры грамматических систем</h3>
-<h4 id="dlya-odnogo-yazyka-2" id="d0b4d0bbd18f-d0bed0b4d0bdd0bed0b3d0be-d18fd0b7d18bd0bad0b0-2" data-line="88" class="code-line">Для одного языка:</h4>
+<h3 id="harakternye-razmery-grammaticheskih-sistem-2" id="d185d0b0d180d0b0d0bad182d0b5d180d0bdd18bd0b5-d180d0b0d0b7d0bcd0b5d180d18b-d0b3d180d0b0d0bcd0bcd0b0d182d0b8d187d0b5d181d0bad0b8d185-d181d0b8d181d182d0b5d0bc-3" data-line="87" class="code-line">Характерные размеры грамматических систем</h3>
+<h4 id="dlya-odnogo-yazyka-2" id="d0b4d0bbd18f-d0bed0b4d0bdd0bed0b3d0be-d18fd0b7d18bd0bad0b0-3" data-line="88" class="code-line">Для одного языка:</h4>
 <ul>
 <li data-line="89" class="code-line">~30 грамматических категорий</li>
 <li data-line="90" class="code-line">До 90 граммем на категорию</li>
 <li data-line="91" class="code-line">В среднем 4-5 граммем на категорию</li>
 </ul>
-<h4 id="dlya-odnoy-chasti-rechi-2" id="d0b4d0bbd18f-d0bed0b4d0bdd0bed0b9-d187d0b0d181d182d0b8-d180d0b5d187d0b8-2" data-line="93" class="code-line">Для одной части речи:</h4>
+<h4 id="dlya-odnoy-chasti-rechi-2" id="d0b4d0bbd18f-d0bed0b4d0bdd0bed0b9-d187d0b0d181d182d0b8-d180d0b5d187d0b8-3" data-line="93" class="code-line">Для одной части речи:</h4>
 <ul>
 <li data-line="94" class="code-line">В среднем до 4 грамматических категорий</li>
 <li data-line="95" class="code-line">До 20 грамматических категорий</li>
 </ul>
 <div style="page-break-after: always;"></div> 
-<h2 id="glossariy-2" id="d0b3d0bbd0bed181d181d0b0d180d0b8d0b9-2" data-line="99" class="code-line">Глоссарий</h2>
+<h2 id="glossariy-2" id="d0b3d0bbd0bed181d181d0b0d180d0b8d0b9-3" data-line="99" class="code-line">Глоссарий</h2>
 <ul>
 <li data-line="100" class="code-line"><strong>Вокабула</strong>:
 <ul>
@@ -927,7 +927,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <li data-line="109" class="code-line"><strong>Лексема</strong> - набор всех словоформ слова. Т.е. <em>&quot;Ворон&quot;</em>, <em>&quot;(к) ворону&quot;</em>, <em>&quot;вороном&quot;</em>, <em>&quot;(о) вороне&quot;</em>, <em>&quot;вороны&quot;</em> и т.д.</li>
 </ul>
 <div style="page-break-after: always;"></div> 
-<h2 id="slovoizmenitelnaya-paradigma-2" id="d181d0bbd0bed0b2d0bed0b8d0b7d0bcd0b5d0bdd0b8d182d0b5d0bbd18cd0bdd0b0d18f-d0bfd0b0d180d0b0d0b4d0b8d0b3d0bcd0b0-2" data-line="113" class="code-line">Словоизменительная парадигма</h2>
+<h2 id="slovoizmenitelnaya-paradigma-2" id="d181d0bbd0bed0b2d0bed0b8d0b7d0bcd0b5d0bdd0b8d182d0b5d0bbd18cd0bdd0b0d18f-d0bfd0b0d180d0b0d0b4d0b8d0b3d0bcd0b0-3" data-line="113" class="code-line">Словоизменительная парадигма</h2>
 <p data-line="114" class="code-line">В лингвистике список словоформ, принадлежащих одной лексеме и имеющих разные грамматические значения.  Обычно представлена в виде таблицы.
 Словоизменительная парадигма выступает образцом того, как строятся словоизменительные формы для целых классов лексем (склонений существительных, спряжений глаголов и т. п.)</p>
 <table align="center">
@@ -1048,14 +1048,14 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 </table>
 </td></tr>
 </table>
-<h4 id="paradigma-opredelyaet-2" id="d0bfd0b0d180d0b0d0b4d0b8d0b3d0bcd0b0-d0bed0bfd180d0b5d0b4d0b5d0bbd18fd0b5d182-2" data-line="153" class="code-line">Парадигма определяет:</h4>
+<h4 id="paradigma-opredelyaet-2" id="d0bfd0b0d180d0b0d0b4d0b8d0b3d0bcd0b0-d0bed0bfd180d0b5d0b4d0b5d0bbd18fd0b5d182-3" data-line="153" class="code-line">Парадигма определяет:</h4>
 <ul>
 <li data-line="154" class="code-line">неизменяемое, классифицирующее грамматическое значение лексемы;</li>
 <li data-line="155" class="code-line">какие есть формы у лексемы;</li>
 <li data-line="156" class="code-line">как записываются формы лексемы.</li>
 </ul>
 <div style="page-break-after: always;"></div> 
-<h2 id="slovoobrazovatelnaya-paradigma-2" id="d181d0bbd0bed0b2d0bed0bed0b1d180d0b0d0b7d0bed0b2d0b0d182d0b5d0bbd18cd0bdd0b0d18f-d0bfd0b0d180d0b0d0b4d0b8d0b3d0bcd0b0-2" data-line="160" class="code-line">Словообразовательная парадигма</h2>
+<h2 id="slovoobrazovatelnaya-paradigma-2" id="d181d0bbd0bed0b2d0bed0bed0b1d180d0b0d0b7d0bed0b2d0b0d182d0b5d0bbd18cd0bdd0b0d18f-d0bfd0b0d180d0b0d0b4d0b8d0b3d0bcd0b0-3" data-line="160" class="code-line">Словообразовательная парадигма</h2>
 <p data-line="161" class="code-line">Совокупность производных слов (дериватов) от одной основы.</p>
 <ul>
 <li data-line="162" class="code-line">у образованных слов своё словоизменение</li>
@@ -1109,8 +1109,8 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 </td></tr>
 </table>
 <div style="page-break-after: always;"></div> 
-<h2 id="klassifikaciya-slovoizmeneniya-2" id="d0bad0bbd0b0d181d181d0b8d184d0b8d0bad0b0d186d0b8d18f-d181d0bbd0bed0b2d0bed0b8d0b7d0bcd0b5d0bdd0b5d0bdd0b8d18f-2" data-line="185" class="code-line">Классификация словоизменения</h2>
-<h4 id="1.-izoliruyushchie-amorfnye-odnoslozhnye-kornevye-yazyki-2" id="1-d0b8d0b7d0bed0bbd0b8d180d183d18ed189d0b8d0b5-d0b0d0bcd0bed180d184d0bdd18bd0b5-d0bed0b4d0bdd0bed181d0bbd0bed0b6d0bdd18bd0b5-d0bad0bed180d0bdd0b5d0b2d18bd0b5-d18fd0b7d18bd0bad0b8-2" data-line="187" class="code-line">1. Изолирующие (аморфные, односложные, корневые) языки</h4>
+<h2 id="klassifikaciya-slovoizmeneniya-2" id="d0bad0bbd0b0d181d181d0b8d184d0b8d0bad0b0d186d0b8d18f-d181d0bbd0bed0b2d0bed0b8d0b7d0bcd0b5d0bdd0b5d0bdd0b8d18f-3" data-line="185" class="code-line">Классификация словоизменения</h2>
+<h4 id="1.-izoliruyushchie-amorfnye-odnoslozhnye-kornevye-yazyki-2" id="1-d0b8d0b7d0bed0bbd0b8d180d183d18ed189d0b8d0b5-d0b0d0bcd0bed180d184d0bdd18bd0b5-d0bed0b4d0bdd0bed181d0bbd0bed0b6d0bdd18bd0b5-d0bad0bed180d0bdd0b5d0b2d18bd0b5-d18fd0b7d18bd0bad0b8-3" data-line="187" class="code-line">1. Изолирующие (аморфные, односложные, корневые) языки</h4>
 <p data-line="188" class="code-line">Языки с низким соотношением морфем к слову. Слова в максимально изолирующем языке будут состоять только из одной морфемы — корня,
 не образуя ни составных слов, ни сочетаний с суффиксами, префиксами и т. д. (Например слово &quot;хаки&quot; в русском). Также изолирующие языки имеют тенденцию избегать служебные слова,
 поэтому порядок в слов в предложении очень важен</p>
@@ -1123,16 +1123,16 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <li data-line="197" class="code-line">Кхмерский язык в Камбодже</li>
 <li data-line="198" class="code-line">Лаосский язык</li>
 </ul>
-<h4 id="2.-analiticheskie-yazyki-2" id="2-d0b0d0bdd0b0d0bbd0b8d182d0b8d187d0b5d181d0bad0b8d0b5-d18fd0b7d18bd0bad0b8-2" data-line="200" class="code-line">2. Аналитические языки</h4>
+<h4 id="2.-analiticheskie-yazyki-2" id="2-d0b0d0bdd0b0d0bbd0b8d182d0b8d187d0b5d181d0bad0b8d0b5-d18fd0b7d18bd0bad0b8-3" data-line="200" class="code-line">2. Аналитические языки</h4>
 <p data-line="201" class="code-line">Являются изолирующими, однако синтаксическая информация предаётся при помощи отдельных грамматикализированных слов вместо морфологии. Типичные представители:
 английский, голландский, болгарские языки.</p>
 <div style="page-break-after: always;"></div> 
-<h4 id="3.-sinteticheskie-yazyki-2" id="3-d181d0b8d0bdd182d0b5d182d0b8d187d0b5d181d0bad0b8d0b5-d18fd0b7d18bd0bad0b8-2" data-line="206" class="code-line">3. Синтетические языки</h4>
+<h4 id="3.-sinteticheskie-yazyki-2" id="3-d181d0b8d0bdd182d0b5d182d0b8d187d0b5d181d0bad0b8d0b5-d18fd0b7d18bd0bad0b8-3" data-line="206" class="code-line">3. Синтетические языки</h4>
 <p data-line="207" class="code-line">Типологический класс языков, в которых преобладают синтетические формы выражения грамматических значений.</p>
 <p data-line="209" class="code-line">В синтетических языках грамматические значения выражаются в пределах самого слова (аффиксация, внутренняя флексия, ударение, супплетивизм),
 то есть формами самих слов. Для выражения отношений между словами в предложении могут быть использованы также элементы аналитического строя
 (служебные слова, порядок знаменательных слов, интонация).</p>
-<h4 id="4.-flektivnye-yazyki-2" id="4-d184d0bbd0b5d0bad182d0b8d0b2d0bdd18bd0b5-d18fd0b7d18bd0bad0b8-2" data-line="213" class="code-line">4. Флективные языки</h4>
+<h4 id="4.-flektivnye-yazyki-2" id="4-d184d0bbd0b5d0bad182d0b8d0b2d0bdd18bd0b5-d18fd0b7d18bd0bad0b8-3" data-line="213" class="code-line">4. Флективные языки</h4>
 <p data-line="214" class="code-line">Язык синтетического типа, при котором доминирует словоизменение при помощи флексий — формантов, сочетающих сразу несколько значений.
 Типичным примером является русский:</p>
 <ul>
@@ -1142,16 +1142,16 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <li data-line="219" class="code-line">стел-ющийся (Прич+НВ+ЕЧ+МР)</li>
 <li data-line="220" class="code-line">стел-ясь (Дееприч+НВ)</li>
 </ul>
-<h4 id="5.-aglyutitativnye-yazyki-2" id="5-d0b0d0b3d0bbd18ed182d0b8d182d0b0d182d0b8d0b2d0bdd18bd0b5-d18fd0b7d18bd0bad0b8-2" data-line="222" class="code-line">5. Аглютитативные языки</h4>
+<h4 id="5.-aglyutitativnye-yazyki-2" id="5-d0b0d0b3d0bbd18ed182d0b8d182d0b0d182d0b8d0b2d0bdd18bd0b5-d18fd0b7d18bd0bad0b8-3" data-line="222" class="code-line">5. Аглютитативные языки</h4>
 <p data-line="223" class="code-line">Язык синтетического типа, в котором доминирующим типом словоизменения является агглютинация
 («приклеивание» различных формантов (суффиксов или префиксов)), причём каждый из них несёт только одно значение.</p>
 <p data-line="226" class="code-line">Пример (турецкий):  <strong>ev</strong>(дом) + <strong>ler</strong>(МнЧ) + <strong>im</strong>(выражаает принадлежность <em>1Л, ЕЧ</em>) + <strong>de</strong>(местный падеж) = <strong>evlerimde</strong> (В моих домах);
 <strong>evimde</strong>(В моём доме); <strong>evlerde</strong>(В домах)</p>
 <div style="page-break-after: always;"></div> 
-<h2 id="dopolnitelno-2" id="d0b4d0bed0bfd0bed0bbd0bdd0b8d182d0b5d0bbd18cd0bdd0be-2" data-line="232" class="code-line">Дополнительно</h2>
-<h4 id="ablaut-cheredovanie-glasnyh-2" id="d0b0d0b1d0bbd0b0d183d182-d187d0b5d180d0b5d0b4d0bed0b2d0b0d0bdd0b8d0b5-d0b3d0bbd0b0d181d0bdd18bd185-2" data-line="234" class="code-line">Аблаут (чередование гласных)</h4>
+<h2 id="dopolnitelno-2" id="d0b4d0bed0bfd0bed0bbd0bdd0b8d182d0b5d0bbd18cd0bdd0be-3" data-line="232" class="code-line">Дополнительно</h2>
+<h4 id="ablaut-cheredovanie-glasnyh-2" id="d0b0d0b1d0bbd0b0d183d182-d187d0b5d180d0b5d0b4d0bed0b2d0b0d0bdd0b8d0b5-d0b3d0bbd0b0d181d0bdd18bd185-3" data-line="234" class="code-line">Аблаут (чередование гласных)</h4>
 <p data-line="235" class="code-line">&quot;Внутрення флексия&quot;: соб<span style="color:red">-</span>рать - соб<span style="color:red">е</span>ру - собир<span style="color:red">а</span>ю</p>
-<h4 id="morfema-vnutri-kornya-razryvnaya-mofrologiya-2" id="d0bcd0bed180d184d0b5d0bcd0b0-d0b2d0bdd183d182d180d0b8-d0bad0bed180d0bdd18f-d180d0b0d0b7d180d18bd0b2d0bdd0b0d18f-d0bcd0bed184d180d0bed0bbd0bed0b3d0b8d18f-2" data-line="237" class="code-line">Морфема внутри корня, разрывная мофрология</h4>
+<h4 id="morfema-vnutri-kornya-razryvnaya-mofrologiya-2" id="d0bcd0bed180d184d0b5d0bcd0b0-d0b2d0bdd183d182d180d0b8-d0bad0bed180d0bdd18f-d180d0b0d0b7d180d18bd0b2d0bdd0b0d18f-d0bcd0bed184d180d0bed0bbd0bed0b3d0b8d18f-3" data-line="237" class="code-line">Морфема внутри корня, разрывная мофрология</h4>
 <p data-line="238" class="code-line">Арабский язык:</p>
 <ul>
 <li data-line="239" class="code-line"><strong>k t b</strong> &quot;писать&quot; (корень)
@@ -1170,7 +1170,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 </li>
 </ul>
 <div style="page-break-after: always;"></div> 
-<h2 id="zadachi-kompyuternoy-morfologii-2" id="d0b7d0b0d0b4d0b0d187d0b8-d0bad0bed0bcd0bfd18cd18ed182d0b5d180d0bdd0bed0b9-d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d0b8-2" data-line="250" class="code-line">Задачи компьютерной морфологии</h2>
+<h2 id="zadachi-kompyuternoy-morfologii-2" id="d0b7d0b0d0b4d0b0d187d0b8-d0bad0bed0bcd0bfd18cd18ed182d0b5d180d0bdd0bed0b9-d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d0b8-3" data-line="250" class="code-line">Задачи компьютерной морфологии</h2>
 <ul>
 <li data-line="251" class="code-line"><strong>Спеллинг</strong> - проверка слова по словарю</li>
 <li data-line="252" class="code-line"><strong>Морфологический анализ</strong> - определение грамматического значения и леммы у словоформы</li>
@@ -1179,9 +1179,9 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 </ul>
 <p data-line="256" class="code-line">Далее подробно о каждой задаче и способах её решения.</p>
 <div style="page-break-after: always;"></div>
-<h2 id="morfologicheskiy-analiz-2" id="d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d187d0b5d181d0bad0b8d0b9-d0b0d0bdd0b0d0bbd0b8d0b7-2" data-line="260" class="code-line">Морфологический анализ</h2>
+<h2 id="morfologicheskiy-analiz-2" id="d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d187d0b5d181d0bad0b8d0b9-d0b0d0bdd0b0d0bbd0b8d0b7-3" data-line="260" class="code-line">Морфологический анализ</h2>
 <p data-line="261" class="code-line">Морфологический анализ в лингвистике — определение морфологических характеристик слова.</p>
-<h4 id="zadacha-morfologicheskogo-analiza-2" id="d0b7d0b0d0b4d0b0d187d0b0-d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d187d0b5d181d0bad0bed0b3d0be-d0b0d0bdd0b0d0bbd0b8d0b7d0b0-2" data-line="263" class="code-line">Задача морфологического анализа</h4>
+<h4 id="zadacha-morfologicheskogo-analiza-2" id="d0b7d0b0d0b4d0b0d187d0b0-d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d187d0b5d181d0bad0bed0b3d0be-d0b0d0bdd0b0d0bbd0b8d0b7d0b0-3" data-line="263" class="code-line">Задача морфологического анализа</h4>
 <ul>
 <li data-line="264" class="code-line">Получение леммы</li>
 <li data-line="265" class="code-line">Получение грамматического значения</li>
@@ -1192,14 +1192,14 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 Ралее рассмотрим нейросетевые подходы к решению подобной задачи, ограничившись только определением частей речи у слов.
 Данную задачу еще называют <strong>Part-of-speech tagging</strong>.</p>
 <div style="page-break-after: always;"></div>
-<h2 id="pos-tagging-2" id="pos-tagging-2" data-line="276" class="code-line">POS-tagging</h2>
+<h2 id="pos-tagging-2" id="pos-tagging-3" data-line="276" class="code-line">POS-tagging</h2>
 <p data-line="277" class="code-line">Данная задача относится к типу <strong>Sequence labeling</strong>, т.е. каждому элементу последовательности (В нашем случае слова в тексте)
 нужно сопоставить некоторый тэг, класс (часть речи).</p>
 <p data-line="280" class="code-line">Обычно подобные задачи решаются с помощью рукуррентых сетей, использующих на входе предобученные эмбеддинги слов
 <em>(предполагается, что Вы с ними уже знакомы)</em>. Рассмотрим же самую ленивую реализацию подобной модели на <strong>keras</strong> в ноутбуке <a href="./pos_keras.ipynb" data-href="./pos_keras.ipynb">pos_keras.ipynb</a></p>
 <p data-line="283" class="code-line">Далее мы рассмотрим решение этой же задачи, но уже на чистом <strong>pytorch</strong>.</p>
 <div style="page-break-after: always;"></div>
-<h2 id="pytorch-pipeline-2" id="pytorch-pipeline-2" data-line="287" class="code-line">PyTorch pipeline</h2>
+<h2 id="pytorch-pipeline-2" id="pytorch-pipeline-3" data-line="287" class="code-line">PyTorch pipeline</h2>
 <p data-line="288" class="code-line">Для решения большинства NLP задач на <strong>чистом</strong> торче обычно нужны следующие компоненты:</p>
 <ul>
 <li data-line="289" class="code-line"><strong>Словарь</strong> - хранит отображение строковых значений, например слов, в индексы.</li>
@@ -1216,7 +1216,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <p data-line="300" class="code-line">Все выше перечисленное - скорее разумное наблюдение, нежели абсолютный гайдлайн. В некоторых случаях можно объеденить эти сущности или же, наоборот, добавить новые.</p>
 <p data-line="302" class="code-line">В качестве примера приглашаю в скрипт <a href="./pos_torch.py" data-href="./pos_torch.py">pos_torch.py</a></p>
 <div style="page-break-after: always;"></div>
-<h2 id="allennlp-2" id="allennlp-2" data-line="306" class="code-line">AllenNLP</h2>
+<h2 id="allennlp-2" id="allennlp-3" data-line="306" class="code-line">AllenNLP</h2>
 <p data-line="307" class="code-line">К счастью, писать каждый раз столько кода не нужно. От задачи к задаче многие сущности повторяются: словарь, индексер, тренер, утилиты и обертки.
 Даже больше: все это уже реализовано за нас, например в <a href="https://allennlp.org/" data-href="https://allennlp.org/">AllenNLP</a>.</p>
 <p data-line="310" class="code-line">В этом фреймворке есть следующие сущности:</p>
@@ -1230,7 +1230,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 </ul>
 <p data-line="318" class="code-line">Ну а теперь давайте посмотрим, насколько AllenNLP прекрасен: <a href="pos_allennlp.ipynb" data-href="pos_allennlp.ipynb">pos_allennlp.ipynb</a></p>
 <div style="page-break-after: always;"></div>
-<h2 id="allennlp-json-2" id="allennlp-json-2" data-line="322" class="code-line">AllenNLP JSON</h2>
+<h2 id="allennlp-json-2" id="allennlp-json-3" data-line="322" class="code-line">AllenNLP JSON</h2>
 <p data-line="324" class="code-line">Вы думали это все? Нет, на allennlp можно писать в JSON. Запуск примера:</p>
 <pre><code data-line="326" class="code-line"><code><div>allennlp train pos_config.json -s &lt;путь до папки с результатом&gt; --include-package src_allennlp
 </div></code></code></pre>
@@ -1238,7 +1238,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <img src="pics/allennlp.jpg" align="middle">
 </details>
 <div style="page-break-after: always;"></div>
-<h2 id="flair-embeddings-2" id="flair-embeddings-2" data-line="336" class="code-line">Flair embeddings</h2>
+<h2 id="flair-embeddings-2" id="flair-embeddings-3" data-line="336" class="code-line">Flair embeddings</h2>
 <p data-line="338" class="code-line">Теперь разберем один из SOTA примеров: <strong>Flair embeddings</strong>. Данный подход позволяет генерировать контекстуальные &quot;строковые&quot; эмбеддинги.</p>
 <p data-line="340" class="code-line">Суть довольно проста: мы представляем текст как последовательность символов и эмбеддер (BiRNN) возвращает векторные представления для них.
 Эмбеддинги для каждого слов берутся как конкатенация эмбеддингов последнего символа слова при прямом проходе и первого - при обратном.</p>
@@ -1247,7 +1247,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <img src="pics/charlm.PNG" width="450">
 <p data-line="349" class="code-line"><em>Akbik A., Blythe D., Vollgraf R. Contextual string embeddings for sequence labeling //Proceedings of the 27th International Conference on Computational Linguistics. – 2018. – С. 1638-1649.</em></p>
 <div style="page-break-after: always;"></div>
-<h2 id="ispravlenie-oshibok-2" id="d0b8d181d0bfd180d0b0d0b2d0bbd0b5d0bdd0b8d0b5-d0bed188d0b8d0b1d0bed0ba-2" data-line="354" class="code-line">Исправление ошибок</h2>
+<h2 id="ispravlenie-oshibok-2" id="d0b8d181d0bfd180d0b0d0b2d0bbd0b5d0bdd0b8d0b5-d0bed188d0b8d0b1d0bed0ba-3" data-line="354" class="code-line">Исправление ошибок</h2>
 <p data-line="355" class="code-line">Перейдем к следующей задаче, а именно исправлению ошибок. Одну из главных задач здесь играет словарь, но о нём позже. Сама же задача обычно решается в два этапа:</p>
 <ul>
 <li data-line="356" class="code-line">Поиск ошибок (<strong>Spelling</strong>) - нахождение слов, в которых возможны опечатки. Самое простое решение - проверка наличия такого слова в словаре.</li>
@@ -1261,7 +1261,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <li data-line="363" class="code-line">Распознавание текста и речи</li>
 </ul>
 <div style="page-break-after: always;"></div>
-<h2 id="tipy-oshibok-v-slovah-2" id="d182d0b8d0bfd18b-d0bed188d0b8d0b1d0bed0ba-d0b2-d181d0bbd0bed0b2d0b0d185-2" data-line="367" class="code-line">Типы ошибок в словах</h2>
+<h2 id="tipy-oshibok-v-slovah-2" id="d182d0b8d0bfd18b-d0bed188d0b8d0b1d0bed0ba-d0b2-d181d0bbd0bed0b2d0b0d185-3" data-line="367" class="code-line">Типы ошибок в словах</h2>
 <ul>
 <li data-line="368" class="code-line">Опечатки (случайный набор неверного символа):
 <ul>
@@ -1283,10 +1283,10 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 </li>
 </ul>
 <div style="page-break-after: always;"></div>
-<h2 id="sposoby-resheniya-3" id="d181d0bfd0bed181d0bed0b1d18b-d180d0b5d188d0b5d0bdd0b8d18f-4" data-line="380" class="code-line">Способы решения</h2>
+<h2 id="sposoby-resheniya-3" id="d181d0bfd0bed181d0bed0b1d18b-d180d0b5d188d0b5d0bdd0b8d18f-6" data-line="380" class="code-line">Способы решения</h2>
 <p data-line="381" class="code-line">Сперва рассмотрим способы решения спеллинга. Самый простой способ - поиск в словаре: для каждого слова в тексте проверяем его наличие в словаре.
 Однако, довольно сложно создать словарь, в котором будут все возможные слова и их формы (Имена собственные, заимствоания). Поэтому есть чуть более универсальные способы.</p>
-<h3 id="n-grammy-2" id="n-d0b3d180d0b0d0bcd0bcd18b-2" data-line="384" class="code-line">N-граммы</h3>
+<h3 id="n-grammy-2" id="n-d0b3d180d0b0d0bcd0bcd18b-3" data-line="384" class="code-line">N-граммы</h3>
 <p data-line="385" class="code-line">По сути это кортежи размерности N чего-угодно: символов, слов, предложений, частей речи и пр. Примеры:</p>
 <ul>
 <li data-line="386" class="code-line">Символьные триграммы: <em>матрос -&gt; ##a, #ма, мат, атр, тро, рос, ос#, c##</em></li>
@@ -1301,7 +1301,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 аре, что будет индикатором ошибки.</li>
 </ul>
 <div style="page-break-after: always;"></div>
-<h2 id="ustroystvo-slovarya-2" id="d183d181d182d180d0bed0b9d181d182d0b2d0be-d181d0bbd0bed0b2d0b0d180d18f-2" data-line="398" class="code-line">Устройство словаря</h2>
+<h2 id="ustroystvo-slovarya-2" id="d183d181d182d180d0bed0b9d181d182d0b2d0be-d181d0bbd0bed0b2d0b0d180d18f-3" data-line="398" class="code-line">Устройство словаря</h2>
 <p data-line="399" class="code-line">Далее рассмотрим как строить словарь и как его использовать для решения поставленной задачи.</p>
 <ul>
 <li data-line="400" class="code-line">Самый простой способ - линейный список, но его минусы очевидны: линейный поиск, ну или логарифм, если список отсортирован.
@@ -1333,7 +1333,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 </div></code></pre>
 <p data-line="430" class="code-line">В GitHub mermaid не работает, поэтому смотрим локально.</p>
 <div style="page-break-after: always;"></div>
-<h2 id="osobennosti-zadachi-2" id="d0bed181d0bed0b1d0b5d0bdd0bdd0bed181d182d0b8-d0b7d0b0d0b4d0b0d187d0b8-2" data-line="433" class="code-line">Особенности задачи</h2>
+<h2 id="osobennosti-zadachi-2" id="d0bed181d0bed0b1d0b5d0bdd0bdd0bed181d182d0b8-d0b7d0b0d0b4d0b0d187d0b8-3" data-line="433" class="code-line">Особенности задачи</h2>
 <ul>
 <li data-line="434" class="code-line">Чаще всего ошибки локальны (затрагивают один-два символа)</li>
 <li data-line="435" class="code-line">Может влиять и более широкий контекст: <em>ться -&gt; цца, ant -&gt; ent</em></li>
@@ -1356,7 +1356,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 Ну и, конечно, веса замен можно обучать, например, на истории изменении Википедии.</li>
 </ul>
 <div style="page-break-after: always;"></div>
-<h2 id="problemy-2" id="d0bfd180d0bed0b1d0bbd0b5d0bcd18b-2" data-line="458" class="code-line">Проблемы</h2>
+<h2 id="problemy-3" id="d0bfd180d0bed0b1d0bbd0b5d0bcd18b-6" data-line="458" class="code-line">Проблемы</h2>
 <p data-line="459" class="code-line">Даже имея большой словарь, мы не застрахованы от ложных срабатываний, например, на редких терминах и именах собственных: <em>Эллочка -&gt; Ёлочка</em></p>
 <p data-line="461" class="code-line">Также ошибки возможны на словарных словах, когда, например, слово не подходит грамматически к данному предложению: <em>Отличный день, чтобы <strong>расслабится</strong> и ничего не делать. (расслабиться)</em></p>
 <p data-line="463" class="code-line">Композиты в некоторых языках, например в немецком, могут также усложнить задачу при сильном расчете на словарь:</p>
@@ -1365,7 +1365,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 <p data-line="467" class="code-line">Перевод: <em>Общество служащих младшего звена органа по надзору за строительством при главном управлении электрического обслуживания дунайского пароходства</em></p>
 <p data-line="469" class="code-line">Ну а теперь предлагается на пройденном материале решить задачу исправлени опечаток в <a href="spelling.ipynb" data-href="spelling.ipynb">spelling.ipynb</a></p>
 <div style="page-break-after: always;"></div>
-<h2 id="grammatical-error-correction-2" id="grammatical-error-correction-2" data-line="473" class="code-line">Grammatical Error Correction</h2>
+<h2 id="grammatical-error-correction-2" id="grammatical-error-correction-3" data-line="473" class="code-line">Grammatical Error Correction</h2>
 <p data-line="474" class="code-line">Теперь рассмотрим более сложную задачу - исправление грамматических ошибок. Здесь уже внутри одного слова задачу не решить, т.к. слова с грамматическими ошибками могут быть в словаре, но при этом они не соответсвуют предложению, в котором находятся.</p>
 <p data-line="476" class="code-line">Задача GEC обычно формулируется как задача исправления предложения. Т.е. система GEC на вход принимает предложение с потенциальным ошибками и должа вернуть исправленное предложение. Пример:</p>
 <p data-line="478" class="code-line"><strong>Input:</strong> <em>She see Tom is catched by policeman in park at last night.</em></p>
@@ -1377,13 +1377,13 @@ S – spelling error<br>
 R - word or phrase needs Replacing<br>
 J - AdJective</em></p>
 <div style="page-break-after: always;"></div>
-<h2 id="sposoby-resheniya-4" id="d181d0bfd0bed181d0bed0b1d18b-d180d0b5d188d0b5d0bdd0b8d18f-5" data-line="493" class="code-line">Способы решения</h2>
+<h2 id="sposoby-resheniya-4" id="d181d0bfd0bed181d0bed0b1d18b-d180d0b5d188d0b5d0bdd0b8d18f-7" data-line="493" class="code-line">Способы решения</h2>
 <p data-line="494" class="code-line">Эту задачу обычно решают как задачу машинного перевода (SMT - statistical machine translation). А одним из  основных способов решения задачи SMT является seq2seq with attention. Т.е. входная последовательность токенов кодируется в энкодере, а затем декодер декодирует её в новую последовательность, обращая внимание только на определенные входные токены при генерации очередного выходного токена.</p>
 <p data-line="496" class="code-line">Этот подход для решения задачи GEC описан в статье <a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewFile/17308/16137" data-href="https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewFile/17308/16137">&quot;A Multilayer Convolutional Encoder-Decoder
 Neural Network for Grammatical Error Correction&quot;</a>. Концептуально, здесь обычный seq2seq с механизмом внимания, только архитектуры энкодера и декодера весьма специфичны. Они осонованы на нескольких слоях сверткок и GLU (Gated Linear Unit), в то время как обычно в seq2seq используются рекуррентые сети.</p>
 <p data-line="499" class="code-line">Другой подход, который сейчас является SOTA на английском, основан не на seq2seq, а на sequence labelling, как мы смотрети в POS-tagging. Только тэги здесь - это одно из 5000 специфических правил замены, удаления, добавления или сохранения. Для этого был построен огромный словарь форм глаголов, а одни из тэгов означают &quot;Заменить форму глагола на такую&quot;. Сама архитектура - просто энкодер берта с парой линейныйх слоёв и softmax. Более подробно подход описан в статье <a href="https://arxiv.org/pdf/2005.12592.pdf" data-href="https://arxiv.org/pdf/2005.12592.pdf">&quot;GECToR – Grammatical Error Correction: Tag, Not Rewrite&quot;</a></p>
 <div style="page-break-after: always;"></div>
-<h2 id="mofrologicheskiy-sintez-2" id="d0bcd0bed184d180d0bed0bbd0bed0b3d0b8d187d0b5d181d0bad0b8d0b9-d181d0b8d0bdd182d0b5d0b7-2" data-line="503" class="code-line">Мофрологический синтез</h2>
+<h2 id="mofrologicheskiy-sintez-2" id="d0bcd0bed184d180d0bed0bbd0bed0b3d0b8d187d0b5d181d0bad0b8d0b9-d181d0b8d0bdd182d0b5d0b7-3" data-line="503" class="code-line">Мофрологический синтез</h2>
 <p data-line="504" class="code-line">Наконец рассмотрим последнюю задачу мофрологии - морфологический синтез. Концептуально задача состоит в следующем: имея начальную форму и грамматическое значение, поставить слово в соответсвующую форму. Например, нужно поставить существительное на английском в множественное число:</p>
 <pre><code data-line="505" class="code-line"><code><div>cat + N + Pl -&gt; cats
 torch + N + Pl -&gt; torches
@@ -1393,7 +1393,7 @@ formula + N + Pl -&gt; formulae / formulas
 </div></code></code></pre>
 <p data-line="512" class="code-line">Как видно из примеров, даже самая простая задача как получение у существительного множественного числа имеет множество случаев, а не только добавление <em>&quot;s&quot;</em> в конец слова. Что говорить о языках с более сложной морфологией, например о русском. Однако эту задачу в некоторой степени можно решить с помощью регулярных выражений (хотя естественный язык нерегулярный, некоторые механизмы можно подогнать под формальные языки)</p>
 <div style="page-break-after: always;"></div>
-<h2 id="regulyarnye-vyrazheniya-2" id="d180d0b5d0b3d183d0bbd18fd180d0bdd18bd0b5-d0b2d18bd180d0b0d0b6d0b5d0bdd0b8d18f-2" data-line="516" class="code-line">Регулярные выражения</h2>
+<h2 id="regulyarnye-vyrazheniya-2" id="d180d0b5d0b3d183d0bbd18fd180d0bdd18bd0b5-d0b2d18bd180d0b0d0b6d0b5d0bdd0b8d18f-3" data-line="516" class="code-line">Регулярные выражения</h2>
 <p data-line="517" class="code-line">Вспомним немного теорию формальных языков.</p>
 <ul>
 <li data-line="518" class="code-line">Пусть <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Σ</span></span></span></span>  - некоторый конечный алфавит</li>
@@ -1422,7 +1422,7 @@ formula + N + Pl -&gt; formulae / formulas
 <li data-line="540" class="code-line"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><msup><mi>b</mi><mo>∗</mo></msup><mi>a</mi><msup><mi>b</mi><mo>∗</mo></msup><mi>a</mi><msup><mi>b</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">\alpha = b^*ab^*ab^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.688696em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span><span class="mord mathdefault">a</span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.688696em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span><span class="mord mathdefault">a</span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.688696em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>α</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L(\alpha)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">L</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mclose">)</span></span></span></span> - слова с двумя <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span></li>
 </ul>
 <div style="page-break-after: always;"></div>
-<h2 id="konechnyy-avtomat-2" id="d0bad0bed0bdd0b5d187d0bdd18bd0b9-d0b0d0b2d182d0bed0bcd0b0d182-2" data-line="544" class="code-line">Конечный автомат</h2>
+<h2 id="konechnyy-avtomat-2" id="d0bad0bed0bdd0b5d187d0bdd18bd0b9-d0b0d0b2d182d0bed0bcd0b0d182-3" data-line="544" class="code-line">Конечный автомат</h2>
 <p data-line="545" class="code-line"><strong>Конечным автоматом</strong> называют кортеж <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo>&lt;</mo><mi>Q</mi><mo separator="true">,</mo><mi mathvariant="normal">Σ</mi><mo separator="true">,</mo><mi mathvariant="normal">Δ</mi><mo separator="true">,</mo><msub><mi>q</mi><mi>o</mi></msub><mo separator="true">,</mo><mi>F</mi><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">M=&lt;Q,\Sigma, \Delta, q_o, F&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">Σ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">Δ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span></span></span>, где</p>
 <ul>
 <li data-line="546" class="code-line"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Σ</span></span></span></span> - конечный алфавит.</li>
@@ -1434,7 +1434,7 @@ formula + N + Pl -&gt; formulae / formulas
 <p data-line="552" class="code-line">Обычно автомат изображаеют как ориентированный граф, где вершины - это состояния, а ребра - метки перехода.</p>
 <p data-line="554" class="code-line">Языком, задаваемый автоматом, являются всевозможные пути (метки перехода) из начального состояния в конечные. Такой язык называют <strong>автоматным</strong>.</p>
 <div style="page-break-after: always;"></div>
-<h2 id="svoystva-avtomatnyh-yazykov-2" id="d181d0b2d0bed0b9d181d182d0b2d0b0-d0b0d0b2d182d0bed0bcd0b0d182d0bdd18bd185-d18fd0b7d18bd0bad0bed0b2-2" data-line="558" class="code-line">Свойства автоматных языков</h2>
+<h2 id="svoystva-avtomatnyh-yazykov-2" id="d181d0b2d0bed0b9d181d182d0b2d0b0-d0b0d0b2d182d0bed0bcd0b0d182d0bdd18bd185-d18fd0b7d18bd0bad0bed0b2-3" data-line="558" class="code-line">Свойства автоматных языков</h2>
 <p data-line="559" class="code-line"><ins><strong>Теорема</strong></ins>. Любой автоматный язык распознаётся автоматом без <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span>-переходов.</p>
 <p data-line="561" class="code-line"><ins><strong>Определение</strong></ins>. Автомат без <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span>-переходов называют <strong>детерминированным</strong>, если ни из какого сотояния нет двух переходов по одной метке.</p>
 <p data-line="563" class="code-line"><ins><strong>Теорема</strong></ins>. Любой автоматный язык распознаётся детерминированным конечным автоматом.</p>
@@ -1460,7 +1460,7 @@ formula + N + Pl -&gt; formulae / formulas
     classDef red fill:#f00;
 </div></code></pre>
 <div style="page-break-after: always;"></div>
-<h2 id="konechnyy-preobrazovatel-2" id="d0bad0bed0bdd0b5d187d0bdd18bd0b9-d0bfd180d0b5d0bed0b1d180d0b0d0b7d0bed0b2d0b0d182d0b5d0bbd18c-2" data-line="589" class="code-line">Конечный преобразователь</h2>
+<h2 id="konechnyy-preobrazovatel-2" id="d0bad0bed0bdd0b5d187d0bdd18bd0b9-d0bfd180d0b5d0bed0b1d180d0b0d0b7d0bed0b2d0b0d182d0b5d0bbd18c-3" data-line="589" class="code-line">Конечный преобразователь</h2>
 <p data-line="590" class="code-line"><strong>Конечным преобразователем</strong> называют кортеж <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mo>&lt;</mo><mi>Q</mi><mo separator="true">,</mo><mi mathvariant="normal">Σ</mi><mo separator="true">,</mo><mi mathvariant="normal">Γ</mi><mo separator="true">,</mo><mi mathvariant="normal">Δ</mi><mo separator="true">,</mo><msub><mi>q</mi><mi>o</mi></msub><mo separator="true">,</mo><mi>F</mi><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">M=&lt;Q,\Sigma, \Gamma, \Delta, q_o, F&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">Σ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">Γ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">Δ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span></span></span>, где</p>
 <ul>
 <li data-line="591" class="code-line"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">\Sigma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Σ</span></span></span></span> - конечный входной алфавит.</li>
@@ -1481,7 +1481,7 @@ formula + N + Pl -&gt; formulae / formulas
 <li data-line="606" class="code-line">Обращения <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>T</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mo stretchy="false">{</mo><mo>&lt;</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>&gt;</mo><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mi>y</mi><mo separator="true">,</mo><mi>x</mi><mo>&gt;</mo><mo>∈</mo><mi>T</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">T^{-1} = \{&lt;x,y&gt;|&lt;y,x&gt; \in T\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">}</span></span></span></span></li>
 </ul>
 <div style="page-break-after: always;"></div>
-<h2 id="kontekstnye-zameny-2" id="d0bad0bed0bdd182d0b5d0bad181d182d0bdd18bd0b5-d0b7d0b0d0bcd0b5d0bdd18b-2" data-line="610" class="code-line">Контекстные замены</h2>
+<h2 id="kontekstnye-zameny-2" id="d0bad0bed0bdd182d0b5d0bad181d182d0bdd18bd0b5-d0b7d0b0d0bcd0b5d0bdd18b-3" data-line="610" class="code-line">Контекстные замены</h2>
 <p data-line="611" class="code-line">С помощью конечный преобразователей можно задавать контекстные замены <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>→</mo><mi>Y</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>U</mi><mi mathvariant="normal">_</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">X\to Y || U \_ V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>. Например, меняем <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span> на <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> только между <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> и <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span></span></span></span>: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>→</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">∣</mi><mi>c</mi><mi mathvariant="normal">_</mi><mi>d</mi><mo separator="true">,</mo><mo stretchy="false">(</mo><mi mathvariant="normal">Σ</mi><mo>=</mo><mi mathvariant="normal">Γ</mi><mo>=</mo><mo stretchy="false">{</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo separator="true">,</mo><mi>d</mi><mo stretchy="false">}</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">a\to b || c \_ d,  (\Sigma = \Gamma = \{a,b,c,d\})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mord mathdefault">b</span><span class="mord">∣</span><span class="mord">∣</span><span class="mord mathdefault">c</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">d</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mopen">(</span><span class="mord">Σ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Γ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">d</span><span class="mclose">}</span><span class="mclose">)</span></span></span></span></p>
 <pre><code data-line="613" class="code-line language-mermaid"><div class="mermaid">graph LR
     A((q0)):::red--c:c--&gt;B((q1)):::red
@@ -1496,7 +1496,7 @@ formula + N + Pl -&gt; formulae / formulas
     classDef red fill:#f00;
 </div></code></pre>
 <div style="page-break-after: always;"></div>
-<h2 id="ispolzovanie-konechnogo-preobrazovatelya-2" id="d0b8d181d0bfd0bed0bbd18cd0b7d0bed0b2d0b0d0bdd0b8d0b5-d0bad0bed0bdd0b5d187d0bdd0bed0b3d0be-d0bfd180d0b5d0bed0b1d180d0b0d0b7d0bed0b2d0b0d182d0b5d0bbd18f-2" data-line="629" class="code-line">Использование конечного преобразователя</h2>
+<h2 id="ispolzovanie-konechnogo-preobrazovatelya-2" id="d0b8d181d0bfd0bed0bbd18cd0b7d0bed0b2d0b0d0bdd0b8d0b5-d0bad0bed0bdd0b5d187d0bdd0bed0b3d0be-d0bfd180d0b5d0bed0b1d180d0b0d0b7d0bed0b2d0b0d182d0b5d0bbd18f-3" data-line="629" class="code-line">Использование конечного преобразователя</h2>
 <p data-line="630" class="code-line">Теперь построим конечный преобразователь для приведения сущесвительных ко множественному числу на английском.</p>
 <ul>
 <li data-line="631" class="code-line">Входной алфавит <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Σ</mi><mo>=</mo><mo stretchy="false">{</mo><mi>a</mi><mo>−</mo><mi>z</mi><mo separator="true">,</mo><mo>+</mo><mi>N</mi><mo separator="true">,</mo><mo>+</mo><mi>S</mi><mi>g</mi><mo separator="true">,</mo><mo>+</mo><mi>P</mi><mi>l</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\Sigma=\{a-z, +N, +Sg, +Pl\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Σ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">+</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">+</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">+</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mclose">}</span></span></span></span></li>
@@ -1546,7 +1546,7 @@ formula + N + Pl -&gt; formulae / formulas
 </div></code></pre>
 <p data-line="667" class="code-line">Итоговый преобразователь <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><msub><mi>T</mi><mrow><mi>e</mi><mi>x</mi><mi>c</mi></mrow></msub><msub><mo>∪</mo><mi>p</mi></msub><mo stretchy="false">(</mo><msub><mi>T</mi><mi>s</mi></msub><mo>∘</mo><msub><mi>T</mi><mi>y</mi></msub><mo>∘</mo><msub><mi>T</mi><mrow><mi>s</mi><mi>i</mi><mi>b</mi></mrow></msub><mo>∘</mo><msub><mi>T</mi><mrow><mi>c</mi><mi>l</mi></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T=T_{exc} \cup_p (T_s \circ T_y \circ T_{sib} \circ T_{cl})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">x</span><span class="mord mathdefault mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin"><span class="mbin">∪</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">b</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">c</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
 <div style="page-break-after: always;"></div>
-<h2 id="arabskaya-morfologiya-2" id="d0b0d180d0b0d0b1d181d0bad0b0d18f-d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d18f-2" data-line="671" class="code-line">Арабская морфология</h2>
+<h2 id="arabskaya-morfologiya-2" id="d0b0d180d0b0d0b1d181d0bad0b0d18f-d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d18f-3" data-line="671" class="code-line">Арабская морфология</h2>
 <p data-line="672" class="code-line">Теперь немного рассмотрим пример словоизменения из арабского языка, для которого характерна разрывная мофрология. Тут основу представляет собой набор согласных, между которыми вставляюся гласные для изменения формы. Например:</p>
 <ul>
 <li data-line="673" class="code-line">k t b - &quot;писать&quot;</li>
@@ -1573,7 +1573,7 @@ formula + N + Pl -&gt; formulae / formulas
 <li data-line="692" class="code-line">hsn+I+Act+Perf+3+F -&gt; hasunat</li>
 </ul>
 <div style="page-break-after: always;"></div>
-<h2 id="model-slovoobrazovaniya-2" id="d0bcd0bed0b4d0b5d0bbd18c-d181d0bbd0bed0b2d0bed0bed0b1d180d0b0d0b7d0bed0b2d0b0d0bdd0b8d18f-2" data-line="696" class="code-line">Модель словообразования</h2>
+<h2 id="model-slovoobrazovaniya-2" id="d0bcd0bed0b4d0b5d0bbd18c-d181d0bbd0bed0b2d0bed0bed0b1d180d0b0d0b7d0bed0b2d0b0d0bdd0b8d18f-3" data-line="696" class="code-line">Модель словообразования</h2>
 <p data-line="697" class="code-line">Приведем небольшую часть таблиц морфем для понимания построения примеров:</p>
 <ul>
 <li data-line="698" class="code-line">Порода: в интенсиве только вторая согласная дублируется.</li>
@@ -1646,7 +1646,7 @@ formula + N + Pl -&gt; formulae / formulas
 </tbody>
 </table>
 <div style="page-break-after: always;"></div>
-<h2 id="preobrazovatel-dlya-arabskoy-morfologii-2" id="d0bfd180d0b5d0bed0b1d180d0b0d0b7d0bed0b2d0b0d182d0b5d0bbd18c-d0b4d0bbd18f-d0b0d180d0b0d0b1d181d0bad0bed0b9-d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d0b8-2" data-line="717" class="code-line">Преобразователь для арабской морфологии</h2>
+<h2 id="preobrazovatel-dlya-arabskoy-morfologii-2" id="d0bfd180d0b5d0bed0b1d180d0b0d0b7d0bed0b2d0b0d182d0b5d0bbd18c-d0b4d0bbd18f-d0b0d180d0b0d0b1d181d0bad0bed0b9-d0bcd0bed180d184d0bed0bbd0bed0b3d0b8d0b8-3" data-line="717" class="code-line">Преобразователь для арабской морфологии</h2>
 <ul>
 <li data-line="719" class="code-line"><strong>Input</strong> - проверка корректности и вставка метки класса</li>
 <li data-line="720" class="code-line"><strong>PosInsertion</strong> - вставка маркеров позиций</li>
@@ -1654,7 +1654,7 @@ formula + N + Pl -&gt; formulae / formulas
 <li data-line="722" class="code-line"><strong>Prefix</strong> - вставка префиксов (вид, залог, лицо, род)</li>
 <li data-line="723" class="code-line"><strong>Suffix</strong> - вставка суффиксов (вид, лицо, род)</li>
 <li data-line="724" class="code-line"><strong>Cleanup</strong> - очистка меток</li>
-<li data-line="725" class="code-line"><strong>Общий преобразователь</strong>: Input ◦ PosInsertion ◦ Fill ◦ Prefix ◦ Suffix ◦ Cleanup</li>
+<li data-line="725" class="code-line"><strong>Общий преобразователь</strong>: Input ? PosInsertion ? Fill ? Prefix ? Suffix ? Cleanup</li>
 </ul>
 <p data-line="727" class="code-line">Пример: sfr+I+Act+Imperf+3+F</p>
 <ul>
@@ -1666,7 +1666,7 @@ formula + N + Pl -&gt; formulae / formulas
 <li data-line="733" class="code-line"><strong>Cleanup</strong>: tasfiru</li>
 </ul>
 <div style="page-break-after: always;"></div>
-<h2 id="kompilyatory-dlya-konechnyh-preobrazovateley-2" id="d0bad0bed0bcd0bfd0b8d0bbd18fd182d0bed180d18b-d0b4d0bbd18f-d0bad0bed0bdd0b5d187d0bdd18bd185-d0bfd180d0b5d0bed0b1d180d0b0d0b7d0bed0b2d0b0d182d0b5d0bbd0b5d0b9-2" data-line="737" class="code-line">Компиляторы для конечных преобразователей</h2>
+<h2 id="kompilyatory-dlya-konechnyh-preobrazovateley-2" id="d0bad0bed0bcd0bfd0b8d0bbd18fd182d0bed180d18b-d0b4d0bbd18f-d0bad0bed0bdd0b5d187d0bdd18bd185-d0bfd180d0b5d0bed0b1d180d0b0d0b7d0bed0b2d0b0d182d0b5d0bbd0b5d0b9-3" data-line="737" class="code-line">Компиляторы для конечных преобразователей</h2>
 <ul>
 <li data-line="738" class="code-line">XFST (Xerox Finite-state toolkit)</li>
 <li data-line="739" class="code-line">HFST (Helsinki Finite-state toolkit)</li>
@@ -1675,6 +1675,142 @@ formula + N + Pl -&gt; formulae / formulas
 <li data-line="742" class="code-line">OpenFST</li>
 </ul>
 <p data-line="744" class="code-line">Более подробно предлагается ознакомиться с FOMA и выполнить пару заданий из <a href="foma.md" data-href="foma.md">foma.md</a></p>
+<div style="page-break-after: always;"></div>
+<h2 id="lemmatizaciya-2" id="d0bbd0b5d0bcd0bcd0b0d182d0b8d0b7d0b0d186d0b8d18f-3" data-line="748" class="code-line">Лемматизация</h2>
+<p data-line="750" class="code-line">Вернемся к задаче морфологического анализа, в которой нам осталось разобрать подходы к лемматизации. Для словарных слов всё проосто - ищем их в словаре и подставляем соответсвующую форму из словаря. Другой вопрос, как хранить словарь со всеми формами. Ранее мы рассатривали словарь в виде бора и в нём можно хранить также и все формы:</p>
+<pre><code data-line="752" class="code-line language-mermaid"><div class="mermaid">graph LR
+    A1((#))--&gt;A2((К))    
+    A2--&gt;A3((О))
+    A3--&gt;A4((T)):::red
+    A4--&gt;B1((Ы)):::red
+    A4--&gt;B2((A)):::red
+    A4--&gt;B3((У)):::red
+    A4--&gt;B4((О))
+    B4--&gt;B5((M)):::red
+    A4--&gt;C1((И))
+    C1--&gt;C2((К)):::red
+    C2--&gt;C3((A))
+    C2--&gt;C4((У))
+    C2--&gt;C5((О))
+    C5--&gt;C6((М)):::red
+    B1-.-&gt;A4
+    B2-.-&gt;A4
+    B3-.-&gt;A4
+    B5-.-&gt;A4
+    classDef red fill:#f00;   
+
+</div></code></pre>
+<div style="page-break-after: always;"></div>
+<h2 id="slovar-paradigm-2" id="d181d0bbd0bed0b2d0b0d180d18c-d0bfd0b0d180d0b0d0b4d0b8d0b3d0bc-3" data-line="778" class="code-line">Словарь парадигм</h2>
+<p data-line="779" class="code-line">Предыдущее представление имеет несколько недостатков:</p>
+<ul>
+<li data-line="780" class="code-line">Глубина словаря</li>
+<li data-line="781" class="code-line">Объем словаря</li>
+<li data-line="782" class="code-line">Неэфективность получения всех форм слова</li>
+</ul>
+<p data-line="784" class="code-line">Другим способом хранения словаря с формами - это отдельные словари для основ и парадигм.</p>
+<table align="center">
+<tr><td>
+<pre><code data-line="789" class="code-line language-mermaid"><div class="mermaid">graph LR
+    A1((#))--&gt;A2((К))    
+    A2--&gt;A3((О))
+    A3--&gt;A4((T)):::red  
+    A2--&gt;A5((И))
+    A5--&gt;A6((Т)):::red  
+    classDef red fill:#f00;   
+
+</div></code></pre>
+</td><td>
+<pre><code data-line="802" class="code-line language-mermaid"><div class="mermaid">graph RL
+    A1((#)):::red--&gt;A2((A)):::red    
+    A1--&gt;A3((У)):::red
+    A3--&gt;A4((T)):::red    
+    A1--&gt;A5((M))
+    A5--&gt;A6((О)):::red
+    classDef red fill:#f00;   
+
+</div></code></pre>
+</td>
+</tr>
+</table>
+<p data-line="817" class="code-line">При этом при поиске основы проходим слева направо, а для оконачания - справа налево: <span style="text-decoration:overline">КОТ</span><u>ОМ</u></p>
+<div style="page-break-after: always;"></div>
+<h2 id="problemy-4" id="d0bfd180d0bed0b1d0bbd0b5d0bcd18b-7" data-line="821" class="code-line">Проблемы</h2>
+<p data-line="823" class="code-line">К сожалению, у нас остаётся еще много случаев, которые не удаётся решить подобным образом:</p>
+<ul>
+<li data-line="824" class="code-line">Композиты: пар<span style="color:red">о</span>воз<span style="color:red">о</span>строение, Петропавловск-Камчатский. <span style="color:red">г.</span>Москва
+<ul>
+<li data-line="825" class="code-line">Можно пытаться решать с помощью итеративного разбиения на части и проверки в словаре и с помощью правил, например, две основы начинаются с загловной буквы и разделены с помощью &quot;-&quot;</li>
+</ul>
+</li>
+<li data-line="826" class="code-line">Незнакомые слова - пытаемся подогнать парадигму под какое-нибудь знакомое слово. Пример: заддосить:
+<ul>
+<li data-line="827" class="code-line">Выделяются всевозможные окончания:
+<ul>
+<li data-line="828" class="code-line">заддосить(пустое, как у &quot;резюме&quot;)</li>
+<li data-line="829" class="code-line">заддосит<span style="color:red">ь</span>(как в &quot;феврал<span style="color:red">ь</span>&quot;)</li>
+<li data-line="830" class="code-line">заддоси<span style="color:red">ть</span>(как в &quot;закоси<span style="color:red">ть</span>&quot;)</li>
+</ul>
+</li>
+<li data-line="831" class="code-line">Подбирается набор парадигм, которые могут иметь подобные окончания</li>
+<li data-line="832" class="code-line">Пары (парадигма, окончание) сортируются с использованием N-граммной статистики</li>
+<li data-line="833" class="code-line">Оцениваем сомвестную вероятность, что у слова такая парадигма, такой суффикс и такая форма, и выбираем парадигму(и форму) с наибольшей вероятностью</li>
+</ul>
+</li>
+<li data-line="834" class="code-line">Омонимия: Эти виды <span style="color:red">стали</span> у многих <span style="color:red">стали</span> пользоваться популярностью.
+<ul>
+<li data-line="835" class="code-line">В рамках одного слова эту задачу не решить, но мы уже умеем в pos-tagging, так что с помощью него получаем часть речи и используем соответсвующую парадигму.</li>
+</ul>
+</li>
+</ul>
+<p data-line="837" class="code-line">Далее все-таки посмотрим, как задача лемматизации решается в готовых системах</p>
+<div style="page-break-after: always;"></div>
+<h2 id="mystem-2" id="mystem-3" data-line="841" class="code-line">MyStem</h2>
+<p data-line="843" class="code-line">Описание работы <a href="https://cache-mskmar06.cdn.yandex.net/download.yandex.ru/company/iseg-las-vegas.pdf" data-href="https://cache-mskmar06.cdn.yandex.net/download.yandex.ru/company/iseg-las-vegas.pdf">тут</a>.
+Данный морфологический анализатор расчитан на максимальное быстродействие для использования в поисковом движке. Поэтому о каких-то серьёзных использованиях контекста речи не идет.</p>
+<p data-line="846" class="code-line">Словарь здесь представлен как бор инвертированных основ и дерево всевозможных суффиксов. Сам алгоритм поиска выглядит следующим образом:</p>
+<ol>
+<li data-line="847" class="code-line">Слово обрабатывается справа налево, и спускаясь по дереву суффиксов получаем всевозможные точки деления основы и суффикса.</li>
+<li data-line="848" class="code-line">Далее начиная с самой глубокой точки деления пытаемся найти словарное слово изменяя последние две буквы основы</li>
+<li data-line="849" class="code-line">Если словарное слово находится, то возвращаем его</li>
+<li data-line="850" class="code-line">Иначе повторяем шаг 2 запоминая точки ветвления, и их ищем среди кандидатов возможную модель слова</li>
+</ol>
+<p data-line="852" class="code-line">Также в алгоритм были встроены дополнительные эвристики:</p>
+<ul>
+<li data-line="853" class="code-line">полученная основа должна содержать гласную</li>
+<li data-line="854" class="code-line">основа у модель должна иметь часть речи</li>
+<li data-line="855" class="code-line">должна существовать минимальная длина основы</li>
+<li data-line="856" class="code-line">должна существовать минимальная общая часть примера и неизвестного слова</li>
+<li data-line="857" class="code-line">парадигма модели должна встретиться хотябы дважды в словаре</li>
+</ul>
+<p data-line="859" class="code-line"><em>Segalovich I. A fast morphological algorithm with unknown word guessing induced by a dictionary for a web search engine //MLMTA. – 2003. – С. 273-280.</em></p>
+<div style="page-break-after: always;"></div>
+<h2 id="edit-trees-2" id="edit-trees-3" data-line="863" class="code-line">Edit trees</h2>
+<p data-line="865" class="code-line">Достаточно распространенным какое-то время был подход, основанный на деревьях замен (edit trees). Ниже можно увидеть пример такого дерева:</p>
+<img src="pics/edittrees.PNG" align="middle">
+<p data-line="869" class="code-line">Задача лемматизации в этом случае сводится к следующему:</p>
+<ul>
+<li data-line="870" class="code-line">По обучающему корпусу построить edit trees</li>
+<li data-line="871" class="code-line">Свести задачу к sequence tagging, где классы - различные деревья замен.</li>
+</ul>
+<p data-line="873" class="code-line">Примеры такого подхода можно пожно почитать <a href="https://www.aclweb.org/anthology/D15-1272.pdf" data-href="https://www.aclweb.org/anthology/D15-1272.pdf">тут</a> и <a href="https://www.aclweb.org/anthology/P17-1136.pdf" data-href="https://www.aclweb.org/anthology/P17-1136.pdf">тут</a></p>
+<p data-line="875" class="code-line"><em>Müller T. et al. Joint lemmatization and morphological tagging with lemming //Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. – 2015. – С. 2268-2274.</em></p>
+<p data-line="877" class="code-line"><em>Chakrabarty A., Pandit O. A., Garain U. Context sensitive lemmatization using two successive bidirectional gated recurrent networks //Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). – 2017. – С. 1481-1491.</em></p>
+<div style="page-break-after: always;"></div>
+<h2 id="seq2seq-2" id="seq2seq-3" data-line="881" class="code-line">Seq2Seq</h2>
+<p data-line="883" class="code-line">Ну и, наконец, рассмотрим seq2seq подходы. В качестве примера рассмотриму эту <a href="https://arxiv.org/pdf/1902.00972.pdf" data-href="https://arxiv.org/pdf/1902.00972.pdf">статью</a>.
+На вход модели подаются символы слова, за которыми следуют специальный символы морфологических тэгов, полученных при предварительном анализе.</p>
+<img src="pics/lemmatization.PNG" align="middle">
+<p data-line="888" class="code-line"><em>Kanerva J., Ginter F., Salakoski T. Universal Lemmatizer: A sequence-to-sequence model for lemmatizing Universal Dependencies treebanks //Natural Language Engineering. – 2019. – С. 1-30.</em></p>
+<div style="page-break-after: always;"></div>
+<h2 id="lemmatus-2" id="lemmatus-3" data-line="892" class="code-line">Lemmatus</h2>
+<p data-line="894" class="code-line">Также на символьных эмбеддингах и seq2seq с attention основана модель <a href="https://www.aclweb.org/anthology/N18-1126.pdf" data-href="https://www.aclweb.org/anthology/N18-1126.pdf">Lematus</a>.
+В ней вместо дополнительных символов морфологических тэгов используются символы соседних слов. Например:</p>
+<pre><code data-line="896" class="code-line"><code><div>... &lt;s&gt; м а м а &lt;lc&gt; м ы л а &lt;rc&gt; р а м у &lt;s&gt; ...
+</div></code></code></pre>
+<p data-line="899" class="code-line">Здесь символы <code>&lt;lc&gt;</code> и <code>&lt;rc&gt;</code> используются для обозначения левой и правой границы рассматриваемого слова, а <code>&lt;s&gt;</code> - для разделения слов (вместо пробела).</p>
+<p data-line="901" class="code-line"><em>Bergmanis T., Goldwater S. Context sensitive neural lemmatization with lematus //Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers). – 2018. – С. 1391-1400.</em></p>
+<p data-line="903" class="code-line">Корпуса для обучения лемматизаторов есть в Universal Dependencies: <a href="https://universaldependencies.org/" data-href="https://universaldependencies.org/">https://universaldependencies.org/</a></p>
 
         <script>!function(e){var t={};function n(o){if(t[o])return t[o].exports;var i=t[o]={i:o,l:!1,exports:{}};return e[o].call(i.exports,i,i.exports,n),i.l=!0,i.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var i in e)n.d(o,i,function(t){return e[t]}.bind(null,i));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=3)}([function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});let o=void 0;function i(e){const t=document.getElementById("vscode-markdown-preview-data");if(t){const n=t.getAttribute(e);if(n)return JSON.parse(n)}throw new Error(`Could not load data for ${e}`)}t.getData=i,t.getSettings=function(){if(o)return o;if(o=i("data-settings"))return o;throw new Error("Could not load settings")}},function(e,t){var n;n=function(){return this}();try{n=n||new Function("return this")()}catch(e){"object"==typeof window&&(n=window)}e.exports=n},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});const o=n(0),i="code-line";function r(e){return t=0,n=o.getSettings().lineCount-1,i=e,Math.min(n,Math.max(t,i));var t,n,i}const c=(()=>{let e;return()=>{if(!e){e=[{element:document.body,line:0}];for(const t of document.getElementsByClassName(i)){const n=+t.getAttribute("data-line");isNaN(n)||("CODE"===t.tagName&&t.parentElement&&"PRE"===t.parentElement.tagName?e.push({element:t.parentElement,line:n}):e.push({element:t,line:n}))}}return e}})();function s(e){const t=Math.floor(e),n=c();let o=n[0]||null;for(const e of n){if(e.line===t)return{previous:e,next:void 0};if(e.line>t)return{previous:o,next:e};o=e}return{previous:o}}function a(e){const t=c(),n=e-window.scrollY;let o=-1,i=t.length-1;for(;o+1<i;){const e=Math.floor((o+i)/2),r=u(t[e]);r.top+r.height>=n?i=e:o=e}const r=t[i],s=u(r);if(i>=1&&s.top>n){return{previous:t[o],next:r}}return i>1&&i<t.length&&s.top+s.height>n?{previous:r,next:t[i+1]}:{previous:r}}function u({element:e}){const t=e.getBoundingClientRect(),n=e.querySelector(`.${i}`);if(n){const e=n.getBoundingClientRect(),o=Math.max(1,e.top-t.top);return{top:t.top,height:o}}return t}t.getElementsForSourceLine=s,t.getLineElementsAtPageOffset=a,t.scrollToRevealSourceLine=function(e){if(!o.getSettings().scrollPreviewWithEditor)return;if(e<=0)return void window.scroll(window.scrollX,0);const{previous:t,next:n}=s(e);if(!t)return;let i=0;const r=u(t),c=r.top;if(n&&n.line!==t.line){i=c+(e-t.line)/(n.line-t.line)*(n.element.getBoundingClientRect().top-c)}else{const t=e-Math.floor(e);i=c+r.height*t}window.scroll(window.scrollX,Math.max(1,window.scrollY+i))},t.getEditorLineNumberForPageOffset=function(e){const{previous:t,next:n}=a(e);if(t){const o=u(t),i=e-window.scrollY-o.top;if(n){const e=i/(u(n).top-o.top);return r(t.line+e*(n.line-t.line))}{const e=i/o.height;return r(t.line+e)}}return null},t.getLineElementForFragment=function(e){return c().find(t=>t.element.id===e)}},function(e,t,n){"use strict";(function(e){Object.defineProperty(t,"__esModule",{value:!0});const o=n(7),i=n(8),r=n(9),c=n(2),s=n(0),a=n(10);let u=!0;const l=new o.ActiveLineMarker,f=s.getSettings(),d=acquireVsCodeApi(),m=d.getState(),p={..."object"==typeof m?m:{},...s.getData("data-state")};d.setState(p);const g=r.createPosterForVsCode(d);window.cspAlerter.setPoster(g),window.styleLoadingMonitor.setPoster(g),window.onload=()=>{v()},i.onceDocumentLoaded(()=>{const t=p.scrollProgress;"number"!=typeof t||f.fragment?f.scrollPreviewWithEditor&&e(()=>{if(f.fragment){p.fragment=void 0,d.setState(p);const e=c.getLineElementForFragment(f.fragment);e&&(u=!0,c.scrollToRevealSourceLine(e.line))}else isNaN(f.line)||(u=!0,c.scrollToRevealSourceLine(f.line))}):e(()=>{u=!0,window.scrollTo(0,t*document.body.clientHeight)})});const h=(()=>{const e=a(e=>{u=!0,c.scrollToRevealSourceLine(e)},50);return t=>{isNaN(t)||(p.line=t,e(t))}})();let v=a(()=>{const e=[];let t=document.getElementsByTagName("img");if(t){let n;for(n=0;n<t.length;n++){const o=t[n];o.classList.contains("loading")&&o.classList.remove("loading"),e.push({id:o.id,height:o.height,width:o.width})}g.postMessage("cacheImageSizes",e)}},50);window.addEventListener("resize",()=>{u=!0,w(),v()},!0),window.addEventListener("message",e=>{if(e.data.source===f.source)switch(e.data.type){case"onDidChangeTextEditorSelection":l.onDidChangeTextEditorSelection(e.data.line);break;case"updateView":h(e.data.line)}},!1),document.addEventListener("dblclick",e=>{if(!f.doubleClickToSwitchToEditor)return;for(let t=e.target;t;t=t.parentNode)if("A"===t.tagName)return;const t=e.pageY,n=c.getEditorLineNumberForPageOffset(t);"number"!=typeof n||isNaN(n)||g.postMessage("didClick",{line:Math.floor(n)})});const y=["http:","https:","mailto:","vscode:","vscode-insiders:"];function w(){p.scrollProgress=window.scrollY/document.body.clientHeight,d.setState(p)}document.addEventListener("click",e=>{if(!e)return;let t=e.target;for(;t;){if(t.tagName&&"A"===t.tagName&&t.href){if(t.getAttribute("href").startsWith("#"))return;let n=t.getAttribute("data-href");if(!n){if(y.some(e=>t.href.startsWith(e)))return;n=t.getAttribute("href")}return/^[a-z\-]+:/i.test(n)?void 0:(g.postMessage("openLink",{href:n}),e.preventDefault(),void e.stopPropagation())}t=t.parentNode}},!0),window.addEventListener("scroll",a(()=>{if(w(),u)u=!1;else{const e=c.getEditorLineNumberForPageOffset(window.scrollY);"number"!=typeof e||isNaN(e)||g.postMessage("revealLine",{line:e})}},50))}).call(this,n(4).setImmediate)},function(e,t,n){(function(e){var o=Function.prototype.apply;function i(e,t){this._id=e,this._clearFn=t}t.setTimeout=function(){return new i(o.call(setTimeout,window,arguments),clearTimeout)},t.setInterval=function(){return new i(o.call(setInterval,window,arguments),clearInterval)},t.clearTimeout=t.clearInterval=function(e){e&&e.close()},i.prototype.unref=i.prototype.ref=function(){},i.prototype.close=function(){this._clearFn.call(window,this._id)},t.enroll=function(e,t){clearTimeout(e._idleTimeoutId),e._idleTimeout=t},t.unenroll=function(e){clearTimeout(e._idleTimeoutId),e._idleTimeout=-1},t._unrefActive=t.active=function(e){clearTimeout(e._idleTimeoutId);var t=e._idleTimeout;t>=0&&(e._idleTimeoutId=setTimeout((function(){e._onTimeout&&e._onTimeout()}),t))},n(5),t.setImmediate="undefined"!=typeof self&&self.setImmediate||void 0!==e&&e.setImmediate||this&&this.setImmediate,t.clearImmediate="undefined"!=typeof self&&self.clearImmediate||void 0!==e&&e.clearImmediate||this&&this.clearImmediate}).call(this,n(1))},function(e,t,n){(function(e,t){!function(e,n){"use strict";if(!e.setImmediate){var o,i,r,c,s,a=1,u={},l=!1,f=e.document,d=Object.getPrototypeOf&&Object.getPrototypeOf(e);d=d&&d.setTimeout?d:e,"[object process]"==={}.toString.call(e.process)?o=function(e){t.nextTick((function(){p(e)}))}:!function(){if(e.postMessage&&!e.importScripts){var t=!0,n=e.onmessage;return e.onmessage=function(){t=!1},e.postMessage("","*"),e.onmessage=n,t}}()?e.MessageChannel?((r=new MessageChannel).port1.onmessage=function(e){p(e.data)},o=function(e){r.port2.postMessage(e)}):f&&"onreadystatechange"in f.createElement("script")?(i=f.documentElement,o=function(e){var t=f.createElement("script");t.onreadystatechange=function(){p(e),t.onreadystatechange=null,i.removeChild(t),t=null},i.appendChild(t)}):o=function(e){setTimeout(p,0,e)}:(c="setImmediate$"+Math.random()+"$",s=function(t){t.source===e&&"string"==typeof t.data&&0===t.data.indexOf(c)&&p(+t.data.slice(c.length))},e.addEventListener?e.addEventListener("message",s,!1):e.attachEvent("onmessage",s),o=function(t){e.postMessage(c+t,"*")}),d.setImmediate=function(e){"function"!=typeof e&&(e=new Function(""+e));for(var t=new Array(arguments.length-1),n=0;n<t.length;n++)t[n]=arguments[n+1];var i={callback:e,args:t};return u[a]=i,o(a),a++},d.clearImmediate=m}function m(e){delete u[e]}function p(e){if(l)setTimeout(p,0,e);else{var t=u[e];if(t){l=!0;try{!function(e){var t=e.callback,o=e.args;switch(o.length){case 0:t();break;case 1:t(o[0]);break;case 2:t(o[0],o[1]);break;case 3:t(o[0],o[1],o[2]);break;default:t.apply(n,o)}}(t)}finally{m(e),l=!1}}}}}("undefined"==typeof self?void 0===e?this:e:self)}).call(this,n(1),n(6))},function(e,t){var n,o,i=e.exports={};function r(){throw new Error("setTimeout has not been defined")}function c(){throw new Error("clearTimeout has not been defined")}function s(e){if(n===setTimeout)return setTimeout(e,0);if((n===r||!n)&&setTimeout)return n=setTimeout,setTimeout(e,0);try{return n(e,0)}catch(t){try{return n.call(null,e,0)}catch(t){return n.call(this,e,0)}}}!function(){try{n="function"==typeof setTimeout?setTimeout:r}catch(e){n=r}try{o="function"==typeof clearTimeout?clearTimeout:c}catch(e){o=c}}();var a,u=[],l=!1,f=-1;function d(){l&&a&&(l=!1,a.length?u=a.concat(u):f=-1,u.length&&m())}function m(){if(!l){var e=s(d);l=!0;for(var t=u.length;t;){for(a=u,u=[];++f<t;)a&&a[f].run();f=-1,t=u.length}a=null,l=!1,function(e){if(o===clearTimeout)return clearTimeout(e);if((o===c||!o)&&clearTimeout)return o=clearTimeout,clearTimeout(e);try{o(e)}catch(t){try{return o.call(null,e)}catch(t){return o.call(this,e)}}}(e)}}function p(e,t){this.fun=e,this.array=t}function g(){}i.nextTick=function(e){var t=new Array(arguments.length-1);if(arguments.length>1)for(var n=1;n<arguments.length;n++)t[n-1]=arguments[n];u.push(new p(e,t)),1!==u.length||l||s(m)},p.prototype.run=function(){this.fun.apply(null,this.array)},i.title="browser",i.browser=!0,i.env={},i.argv=[],i.version="",i.versions={},i.on=g,i.addListener=g,i.once=g,i.off=g,i.removeListener=g,i.removeAllListeners=g,i.emit=g,i.prependListener=g,i.prependOnceListener=g,i.listeners=function(e){return[]},i.binding=function(e){throw new Error("process.binding is not supported")},i.cwd=function(){return"/"},i.chdir=function(e){throw new Error("process.chdir is not supported")},i.umask=function(){return 0}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});const o=n(2);t.ActiveLineMarker=class{onDidChangeTextEditorSelection(e){const{previous:t}=o.getElementsForSourceLine(e);this._update(t&&t.element)}_update(e){this._unmarkActiveElement(this._current),this._markActiveElement(e),this._current=e}_unmarkActiveElement(e){e&&(e.className=e.className.replace(/\bcode-active-line\b/g,""))}_markActiveElement(e){e&&(e.className+=" code-active-line")}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.onceDocumentLoaded=function(e){"loading"===document.readyState||"uninitialized"===document.readyState?document.addEventListener("DOMContentLoaded",e):e()}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});const o=n(0);t.createPosterForVsCode=e=>new class{postMessage(t,n){e.postMessage({type:t,source:o.getSettings().source,body:n})}}},function(e,t,n){(function(t){var n="Expected a function",o=NaN,i="[object Symbol]",r=/^\s+|\s+$/g,c=/^[-+]0x[0-9a-f]+$/i,s=/^0b[01]+$/i,a=/^0o[0-7]+$/i,u=parseInt,l="object"==typeof t&&t&&t.Object===Object&&t,f="object"==typeof self&&self&&self.Object===Object&&self,d=l||f||Function("return this")(),m=Object.prototype.toString,p=Math.max,g=Math.min,h=function(){return d.Date.now()};function v(e,t,o){var i,r,c,s,a,u,l=0,f=!1,d=!1,m=!0;if("function"!=typeof e)throw new TypeError(n);function v(t){var n=i,o=r;return i=r=void 0,l=t,s=e.apply(o,n)}function b(e){var n=e-u;return void 0===u||n>=t||n<0||d&&e-l>=c}function T(){var e=h();if(b(e))return E(e);a=setTimeout(T,function(e){var n=t-(e-u);return d?g(n,c-(e-l)):n}(e))}function E(e){return a=void 0,m&&i?v(e):(i=r=void 0,s)}function _(){var e=h(),n=b(e);if(i=arguments,r=this,u=e,n){if(void 0===a)return function(e){return l=e,a=setTimeout(T,t),f?v(e):s}(u);if(d)return a=setTimeout(T,t),v(u)}return void 0===a&&(a=setTimeout(T,t)),s}return t=w(t)||0,y(o)&&(f=!!o.leading,c=(d="maxWait"in o)?p(w(o.maxWait)||0,t):c,m="trailing"in o?!!o.trailing:m),_.cancel=function(){void 0!==a&&clearTimeout(a),l=0,i=u=r=a=void 0},_.flush=function(){return void 0===a?s:E(h())},_}function y(e){var t=typeof e;return!!e&&("object"==t||"function"==t)}function w(e){if("number"==typeof e)return e;if(function(e){return"symbol"==typeof e||function(e){return!!e&&"object"==typeof e}(e)&&m.call(e)==i}(e))return o;if(y(e)){var t="function"==typeof e.valueOf?e.valueOf():e;e=y(t)?t+"":t}if("string"!=typeof e)return 0===e?e:+e;e=e.replace(r,"");var n=s.test(e);return n||a.test(e)?u(e.slice(2),n?2:8):c.test(e)?o:+e}e.exports=function(e,t,o){var i=!0,r=!0;if("function"!=typeof e)throw new TypeError(n);return y(o)&&(i="leading"in o?!!o.leading:i,r="trailing"in o?!!o.trailing:r),v(e,t,{leading:i,maxWait:t,trailing:r})}}).call(this,n(1))}]);</script>
 <script>/*! For license information please see page.bundle.js.LICENSE.txt */

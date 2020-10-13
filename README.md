@@ -14,7 +14,7 @@
 Будут рассмотрены state-of-the-art решения для следующих задач:
 - [Part-of-speech tagging](http://nlpprogress.com/english/part-of-speech_tagging.html)
 - [Grammatical error correction](http://nlpprogress.com/english/grammatical_error_correction.html)
-- [Lexical normalization](http://nlpprogress.com/english/lexical_normalization.html)
+- [Lemmatization](#Лемматизация)
 
 <div style="page-break-after: always;"></div> 
 
@@ -773,14 +773,14 @@ graph LR
     classDef red fill:#f00;   
 
 ```
-Такое представление имеет несколько недостатков:
-- Глубина словаря
-- Объем словаря
-- Неэфективность получения всех форм слова
 
 <div style="page-break-after: always;"></div>
 
 ## Словарь парадигм
+Предыдущее представление имеет несколько недостатков:
+- Глубина словаря
+- Объем словаря
+- Неэфективность получения всех форм слова
 
 Другим способом хранения словаря с формами - это отдельные словари для основ и парадигм.
 
@@ -861,16 +861,38 @@ graph RL
 
 <div style="page-break-after: always;"></div>
 
+## Edit trees
+
+Достаточно распространенным какое-то время был подход, основанный на деревьях замен (edit trees). Ниже можно увидеть пример такого дерева:
+
+<img src="pics/edittrees.PNG" align="middle">
+
+Задача лемматизации в этом случае сводится к следующему:
+- По обучающему корпусу построить edit trees
+- Свести задачу к sequence tagging, где классы - различные деревья замен.
+
+Примеры такого подхода можно пожно почитать [тут](https://www.aclweb.org/anthology/D15-1272.pdf) и [тут](https://www.aclweb.org/anthology/P17-1136.pdf)
+
+*M?ller T. et al. Joint lemmatization and morphological tagging with lemming //Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing. – 2015. – С. 2268-2274.*
+
+*Chakrabarty A., Pandit O. A., Garain U. Context sensitive lemmatization using two successive bidirectional gated recurrent networks //Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). – 2017. – С. 1481-1491.*
+
+<div style="page-break-after: always;"></div>
+
 ## Seq2Seq
 
-В качестве примера использования сеточек рассмотриму эту [статью](https://arxiv.org/pdf/1902.00972.pdf). Здесь за основу взят seq2seq подход.
+Ну и, наконец, рассмотрим seq2seq подходы. В качестве примера рассмотриму эту [статью](https://arxiv.org/pdf/1902.00972.pdf). 
 На вход модели подаются символы слова, за которыми следуют специальный символы морфологических тэгов, полученных при предварительном анализе.
 
 <img src="pics/lemmatization.PNG" align="middle">
 
 *Kanerva J., Ginter F., Salakoski T. Universal Lemmatizer: A sequence-to-sequence model for lemmatizing Universal Dependencies treebanks //Natural Language Engineering. – 2019. – С. 1-30.*
 
-Также на символьных эмбеддингах и seq2seq с attention основана моделб [Lematus](https://www.aclweb.org/anthology/N18-1126.pdf).
+<div style="page-break-after: always;"></div>
+
+## Lemmatus
+
+Также на символьных эмбеддингах и seq2seq с attention основана модель [Lematus](https://www.aclweb.org/anthology/N18-1126.pdf).
 В ней вместо дополнительных символов морфологических тэгов используются символы соседних слов. Например:
 ```
 ... <s> м а м а <lc> м ы л а <rc> р а м у <s> ...
