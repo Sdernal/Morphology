@@ -1,0 +1,5 @@
+def Ts "+"N "+"Sg -> "@" || _ .#. .o. "+"N "+"Pl -> "@" s || _ .#. ;
+def Ty y -> i e || [ b | c | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | y | z ] _ "@" s .#. ;
+def Tsib [..] -> e || [ s | z | x | ch | sh ] _ "@" s .#. ;
+def Tcl "@" -> 0 || _ ;
+regex Ts .o. Ty .o. Tsib .o. Tcl ;
