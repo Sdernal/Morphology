@@ -1,0 +1,6 @@
+def Lexicon [[c a t]|[b u s]] [["[Pl]":[0 "+" 0 s]]|["[Sg]":0]] ;
+def EInsert "+" -> e || s _ s ;
+def Cleanup "+" -> 0 ;
+def Transform Lexicon .o. EInsert .o. Cleanup ;
+regex Transform ;
+
