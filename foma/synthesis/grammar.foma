@@ -1,0 +1,17 @@
+read lexc lexicon.lexc
+define Lexicon;
+
+define Exceptions {goose+Pl} .x. {geese};
+
+define EInsertion [..] -> e || s | z | x | c h | s h _ "^" s;
+
+define YReplacement y -> i e || _ "^" s;
+
+define Cleanup "^" -> 0;
+
+define Grammar Lexicon           .o.
+               EInsertion        .o.
+               YReplacement      .o.
+               Cleanup;
+
+regex Exceptions .P. Grammar;
