@@ -68,7 +68,7 @@
       "lr": 0.001
     },
     "grad_clipping": 1.0,
-    "num_epochs": 20,
+    "num_epochs": 30,
     "validation_metric": "+bleu",
     "cuda_device": 0
   }
