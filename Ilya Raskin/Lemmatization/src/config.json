@@ -48,7 +48,7 @@
           "type": "dot_product"
         }
       },
-      "max_decoding_steps": 1000,
+      "max_decoding_steps": 30,
       "target_embedder": {
         "vocab_namespace": "target_namespace",
         "embedding_dim": 100,
@@ -68,8 +68,8 @@
       "lr": 0.001
     },
     "grad_clipping": 1.0,
-    "num_epochs": 30,
-    "validation_metric": "+bleu",
+    "num_epochs": 80,
+    "validation_metric": "+BLEU",
     "cuda_device": 0
   }
 }
