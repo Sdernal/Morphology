@@ -1,0 +1,75 @@
+{
+  "dataset_reader": {
+    "type": "src.reader.DependencyReader",
+    "token_indexers": {
+      "tokens": {
+        "type": "single_id",
+        "namespace": "tokens",
+        "lowercase_tokens": true
+      }
+    },	
+    "target_indexers": {
+      "target": {
+        "type": "single_id",
+        "namespace": "target_namespace",
+        "lowercase_tokens": true
+      }
+    }
+  },
+  "train_data_path": "data/train.conllu",
+  "validation_data_path": "data/dev.conllu",
+  "model": {
+    "type": "composed_seq2seq",
+    "source_text_embedder": {
+      "token_embedders": {
+        "tokens": {
+          "vocab_namespace": "tokens",
+          "type": "embedding",
+          "embedding_dim": 100,
+          "trainable": true
+        }
+      }
+    },
+    "encoder": {
+      "type": "lstm",
+      "bidirectional": true,
+      "dropout": 0.1,
+      "hidden_size": 100,
+      "input_size": 100,
+      "num_layers": 2
+    },
+    "decoder": {
+      "type": "auto_regressive_seq_decoder",
+      "decoder_net": {
+        "type": "lstm_cell",
+        "decoding_dim": 200,
+        "target_embedding_dim": 100,
+        "attention": {
+          "type": "dot_product"
+        }
+      },
+      "max_decoding_steps": 1000,
+      "target_embedder": {
+        "vocab_namespace": "target_namespace",
+        "embedding_dim": 100,
+        "trainable": true
+      },
+      "target_namespace": "target_namespace",
+      "tensor_based_metric": "bleu"
+    }
+  },
+  "data_loader": {
+    "batch_size": 64,
+    "shuffle": true
+  },
+  "trainer": {
+    "optimizer": {
+      "type": "adam",
+      "lr": 0.001
+    },
+    "grad_clipping": 1.0,
+    "num_epochs": 20,
+    "validation_metric": "+bleu",
+    "cuda_device": 0
+  }
+}
