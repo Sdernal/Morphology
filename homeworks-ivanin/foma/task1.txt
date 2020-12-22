@@ -1,0 +1,3 @@
+def lexicon "[Sg]" -> 0 .o. "[Pl]" -> 1 s;
+def einsert 1 -> e || s _ s .o. 1 -> 0;
+regex lexicon .o. einsert;
