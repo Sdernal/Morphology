@@ -1,0 +1,6 @@
+I	PUNCT	None	None
+think	PUNCT	None	None
+football	PUNCT	None	None
+is	PUNCT	None	None
+great	PUNCT	None	None
+!	PUNCT	None	None
