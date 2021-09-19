@@ -20,7 +20,7 @@ class SimpleTagger(nn.Module):
         mask = (x != 0).to(torch.long)
         x = self.embedder(x)
         # x: (batch_size, seq_len, embedding_dim)
-        lengths = mask.sum(dim=1)
+        lengths = mask.sum(dim=1).to('cpu')
         x = pack_padded_sequence(x, lengths, batch_first=True, enforce_sorted=False)
         x, _ = self.encoder(x)
         x, _ = pad_packed_sequence(x, batch_first=True)

@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import wandb
 
 
 class Trainer:
@@ -32,6 +33,8 @@ class Trainer:
                 total_loss / (batch_idx + 1), correct / total, batch_idx + 1, len(self.train_iterator)
             ), end='')
         print()
+        loss, accuracy = total_loss / (batch_idx + 1), correct / total
+        return loss, accuracy
 
     def test_epoch(self):
         with torch.no_grad():
@@ -53,3 +56,22 @@ class Trainer:
                     total_loss / (batch_idx + 1), correct / total, batch_idx + 1, len(self.dev_iterator)
                 ), end='')
             print()
+            loss, accuracy = total_loss / (batch_idx + 1), correct / total
+            return loss, accuracy
+
+    def fit(self, max_epochs: int = 20):
+        for epoch in range(max_epochs):
+            train_loss, train_accuracy = self.train_epoch()
+            test_loss, test_accuracy = self.test_epoch()
+            wandb.log({
+                'train': {
+                    'loss': train_loss,
+                    'acc': train_accuracy
+                },
+                'val': {
+                    'loss': test_loss,
+                    'acc': test_accuracy
+                },
+                'epoch': epoch
+            })
+

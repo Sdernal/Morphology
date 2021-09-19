@@ -1,9 +1,12 @@
 import torch
 from torch.utils.data import RandomSampler, DataLoader, SequentialSampler
-
+import wandb
 from src_torch import RuPosReader, RuPosIndexer, RuPosDataset, load_embeddings, SimpleTagger, Trainer
 
 if __name__ == '__main__':
+    wandb.init(project="rupos2018", name="pytorch")
+    wandb.define_metric("val.acc", summary="max")
+
     device = torch.device('cuda')
     reader = RuPosReader()
     indexer = RuPosIndexer()
@@ -28,8 +31,4 @@ if __name__ == '__main__':
     model.to(device)
 
     trainer = Trainer(model, train_iterator, dev_iterator)
-
-    for i in range(20):
-        print('Epoch: %d' % (i + 1))
-        trainer.train_epoch()
-        trainer.test_epoch()
+    trainer.fit(max_epochs=20)
