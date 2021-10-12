@@ -1,0 +1,5 @@
+def Lexicon [[[c a t]|[t o r c h]|[a l l y]|[f o r m u l a]][["[Sg]":0]|["[Pl]":["+"s]]]]|[["goose[Sg]":"goose"]|["goose[Pl]":"geese"]] ;
+def EInsert %+ -> e || s | z | x | c h | s h _ s ;
+def YReplace y -> i e || _ "+" s ;
+def Cleanup %+ -> 0 ;
+regex Lexicon .o. EInsert .o. YReplace .o. Cleanup ;
