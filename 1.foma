@@ -1,0 +1,7 @@
+define lexi1 [c a t] [["[Pl]":[0 "*" 0 s]]|["[Sg]":0]];
+define lexi2 [b u s] [["[Pl]":[0 "*" 0 s]]|["[Sg]":0]];
+define mulInsert "*" -> e || s _ s ;
+define clean "*" -> 0 ;
+define transform1 lexi1 .o. mulInsert .o. clean ;
+define transform2 lexi2 .o. mulInsert .o. clean ;
+regex transform1 .P. transform2 ;

@@ -1,0 +1,15 @@
+define goose g o o s e "+" N "+" P l -> g e e s e;
+define foot f o o t "+" N "+" P l -> f e e t;
+define man m a n "+" N "+" P l -> m e n;
+define woman w o m a n "+" N "+" P l -> w o m e n;
+define tooth t o o t h "+" N "+" P l -> t e e t h;
+define EInsertion [..] -> e || s | z | x | c h | s h _ "^" s ;
+define YReplacement y -> i e || _ "^" s;
+define Edelition "^" -> 0;
+define grammar  goose .o. foot .o. man .o. woman .o. tooth .o.
+      		EInsertion 	  .o.
+      		YReplacement      .o.
+      		Edelition;
+
+regex grammar;
+    
