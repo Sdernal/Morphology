@@ -1,0 +1,14 @@
+read lexc lexicon.lexc
+define Lexicon;
+
+define YReplacement y -> i e || _ "^" s;
+
+define EInsertion [..] -> e || s | z | x | c h | s h _ "^" s ;
+
+define Cleanup "^" -> 0;
+
+define Grammar Lexicon           .o.
+               EInsertion        .o.
+               YReplacement      .o.
+               Cleanup;
+
